@@ -1,18 +1,5 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { authenticateUser } from '../store/reducers/users';
+import React from 'react';
 
-const Signup = () => {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  useEffect(() => {
-    dispatch(authenticateUser('Tester'));
-  }, []);
-  return (
-    <div>
-      <p>{ user }</p>
-    </div>
-  );
-};
+const Signup = () => <h1>Sign Up</h1>;
 
 export default Signup;
