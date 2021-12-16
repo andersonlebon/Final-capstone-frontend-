@@ -1,28 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/layout/Navbar';
+import Houses from './components/Houses';
+import MyReservations from './components/MyReservations';
+import AddHouses from './components/AddHouses';
+import RemoveHouses from './components/RemoveHouses';
+import Reserve from './components/Reserve';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <section className="container">
+        <Navbar />
+        <article className="main">
+          <Routes>
+            <Route path="/" element={<Houses />} />
+            <Route path="/myreservations" element={<MyReservations />} />
+            <Route path="/addhouse" element={<AddHouses />} />
+            <Route path="/removehouse" element={<RemoveHouses />} />
+            <Route path="/reserve" element={<Reserve />} />
+          </Routes>
+        </article>
+      </section>
+    </Router>
   );
 }
 
