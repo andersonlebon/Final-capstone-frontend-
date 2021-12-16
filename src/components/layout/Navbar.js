@@ -15,7 +15,7 @@ import style from './navbar.module.css';
 const Navbar = ({ logo }) => (
   <nav className={style.navbar}>
     <h1 className={style.head}>
-      <img src={logo} alt="logo" width={150} height={100} />
+      <img src={logo} alt="logo" width={100} height={100} />
     </h1>
     <ul className={style.navlist}>
       <li className={style.listitems}>
@@ -68,8 +68,10 @@ const Navbar = ({ logo }) => (
       <p>
         &copy;
         {' '}
-        <span id="date" />
-        House Booking all rights reserved
+        <span>{new Date().getFullYear()}</span>
+        {' '}
+        House Booking all rights
+        reserved
       </p>
     </footer>
   </nav>
