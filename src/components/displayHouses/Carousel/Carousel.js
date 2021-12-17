@@ -6,6 +6,10 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import IconButton from '@material-ui/core/IconButton';
 import HouseInfos from '../HouseInfos';
 import NextIcon from './NextIcon';
 import PrevIcon from './PrevIcon';
@@ -17,9 +21,6 @@ const Carousel = ({ houses }) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: true,
-    autoplaySpeed: 500,
-    dots: true,
     nextIcon: <NextIcon />,
     prevIcon: <PrevIcon />,
     responsive: [
@@ -35,7 +36,7 @@ const Carousel = ({ houses }) => {
   return (
     <Slider {...settings} className={style.carousel_container}>
       {houses.map((house) => (
-        <>
+        <div key={house.id}>
           <Link
             key={`${house.id}`}
             to={{
@@ -45,7 +46,30 @@ const Carousel = ({ houses }) => {
           >
             <HouseInfos key={house.title} house={house} />
           </Link>
-        </>
+          <div className={style.info_icons}>
+            <IconButton
+              className={style.icon_btn}
+              aria-label="facebook.com"
+              onClick={() => window.open('https://facebook.com', '_blank')}
+            >
+              <FacebookRoundedIcon color="action" sx={{ fontSize: 30 }} />
+            </IconButton>
+            <IconButton
+              className={style.icon_btn}
+              aria-label="twitter.com"
+              onClick={() => window.open('https://twitter.com', '_blank')}
+            >
+              <TwitterIcon color="action" sx={{ fontSize: 30 }} />
+            </IconButton>
+            <IconButton
+              className={style.icon_btn}
+              aria-label="instagram.com"
+              onClick={() => window.open('https://instagram.com', '_blank')}
+            >
+              <InstagramIcon color="action" sx={{ fontSize: 30 }} />
+            </IconButton>
+          </div>
+        </div>
       ))}
     </Slider>
   );
