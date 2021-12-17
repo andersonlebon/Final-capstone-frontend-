@@ -3,8 +3,8 @@ import jwt from 'jwt-decode';
 const AUTHENTICATE_USER = 'AUTHENTICATE_USER';
 const LOGOUT_USER = 'LOGOUT_USER';
 const initialState = { user: localStorage.getItem('token') ? jwt(localStorage.getItem('token')) : null };
-const baseURL = 'http://localhost:4000/api/v1';
-// const baseURL = 'https://house-booking-api.herokuapp.com/api/v1';
+// const baseURL = 'http://localhost:4000/api/v1';
+const baseURL = 'https://house-booking-api.herokuapp.com/api/v1';
 
 export const authenticateUser = (username) => async (dispatch) => {
   const fetched = await fetch(`${baseURL}/sessions`, {
