@@ -21,6 +21,9 @@ const Carousel = ({ houses }) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: true,
     nextIcon: <NextIcon />,
     prevIcon: <PrevIcon />,
     responsive: [
@@ -33,18 +36,19 @@ const Carousel = ({ houses }) => {
       },
     ],
   };
+
   return (
     <Slider {...settings} className={style.carousel_container}>
       {houses.map((house) => (
         <div key={house.id}>
           <Link
-            key={`${house.id}`}
+            key={house.id}
             to={{
               pathname: `/showHouse/${house.title}`,
             }}
             data={house}
           >
-            <HouseInfos key={house.title} house={house} />
+            <HouseInfos key={house.id} house={house} />
           </Link>
           <div className={style.info_icons}>
             <IconButton

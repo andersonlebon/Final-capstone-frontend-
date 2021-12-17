@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable */
-
 import PropTypes from 'prop-types';
 
 const NextIcon = ({ className, style, onClick }) => (
@@ -9,15 +6,15 @@ const NextIcon = ({ className, style, onClick }) => (
     style={{
       ...style,
       display: 'block',
-      background: '#98bf0f',
+      background: '#97bf0f',
       width: 'auto',
       height: 'auto',
       padding: '10px 20px 10px 1px',
       right: '0',
-      zIndex: '1',
-      borderTopLeftRdius: '50%',
+      zIndex: '2',
+      borderTopLeftRadius: '50%',
       borderBottomLeftRadius: '50%',
-      border: '1.5px solid #000',
+      border: '1.5px solid #97b',
     }}
     onClick={onClick}
     onKeyDown={onClick}
@@ -29,14 +26,14 @@ const NextIcon = ({ className, style, onClick }) => (
 
 export default NextIcon;
 
-NextIcon.defaultsProps = {
-  className: '',
-  style: {},
-  onClick: () => {},
-};
-
 NextIcon.propTypes = {
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   onClick: PropTypes.func,
+};
+
+NextIcon.defaultProps = {
+  className: '',
+  style: {},
+  onClick: () => {},
 };

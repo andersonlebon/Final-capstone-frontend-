@@ -1,14 +1,14 @@
 .carousel_container {
-  width: 85vw;
+  width: 100vw;
   margin-top: 3%;
+  padding: 50px 10px;
 }
 
 .info_icons {
   display: flex;
   gap: 15px;
   justify-content: center;
-  border-radius: 50%;
-  margin-top: 2rem;
+  margin-top: 10px;
 
   .icon_btn {
     border: 1px solid grey;
