@@ -21,7 +21,6 @@
   gap: 3rem;
 
   .listitems {
-    text-transform: capitalize;
     font-size: 1.5rem;
     text-transform: uppercase;
 
@@ -45,7 +44,7 @@
     justify-content: center;
 
     a {
-    text-decoration: none;
+      text-decoration: none;
     }
   }
 
@@ -55,4 +54,3 @@
     align-self: center;
   }
 }
-
