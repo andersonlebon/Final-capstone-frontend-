@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Pinterest,
-  Telegram,
-  Whatsapp,
-} from 'react-bootstrap-icons';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import PinterestIcon from '@mui/icons-material/Pinterest';
+import TelegramIcon from '@mui/icons-material/Telegram';
 import logo from './logo.png';
-import style from './navbar.module.css';
+import style from './navbar.module.scss';
 
 const Navbar = ({ logo }) => (
   <nav className={style.navbar}>
@@ -47,22 +44,44 @@ const Navbar = ({ logo }) => (
     <footer className={style.footer}>
       <div className={style.social_icons}>
         <div className={style.icon_div}>
-          <Facebook className={style.icon} />
+          <a
+            href="https://facebook.com"
+            aria-label="facebook"
+          >
+            <FacebookRoundedIcon color="action" sx={{ fontSize: 30 }} />
+          </a>
         </div>
         <div className={style.icon_div}>
-          <Twitter className={style.icon} />
+          <a
+            href="https://twitter.com"
+            aria-label="twitter"
+          >
+            <TwitterIcon color="action" sx={{ fontSize: 30 }} />
+          </a>
         </div>
         <div className={style.icon_div}>
-          <Instagram className={style.icon} />
+          <a
+            href="https://instagram.com"
+            aria-label="instagram"
+          >
+            <InstagramIcon color="action" sx={{ fontSize: 30 }} />
+          </a>
         </div>
         <div className={style.icon_div}>
-          <Pinterest className={style.icon} />
+          <a
+            href="https://pinterest.com"
+            aria-label="instagram"
+          >
+            <PinterestIcon color="action" sx={{ fontSize: 30 }} />
+          </a>
         </div>
         <div className={style.icon_div}>
-          <Telegram className={style.icon} />
-        </div>
-        <div className={style.icon_div}>
-          <Whatsapp className={style.icon} />
+          <a
+            href="https://telegram.com"
+            aria-label="instagram"
+          >
+            <TelegramIcon color="action" sx={{ fontSize: 30 }} />
+          </a>
         </div>
       </div>
       <p>

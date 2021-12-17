@@ -1,22 +1,30 @@
-import axios from 'axios';
-import { GET_HOUSES, HOUSES_ERROR } from '../types';
+import houses from '../../api/houses';
+import { RECEIVE_HOUSES } from '../types';
 
-const BASE_URL = 'https://house-booking-api.herokuapp.com/api/v1/users/{user_id}/houses';
+export const receiveHouses = (houses) => ({
+  type: RECEIVE_HOUSES,
+  houses,
+});
 
-export const getHouses = () => async (dispatch) => {
-  try {
-    const res = await axios.get(`${BASE_URL}`);
-    dispatch({
-      type: GET_HOUSES,
-      // eslint-disable-next-line comma-dangle
-      payload: res.data
-    });
-  } catch (error) {
-    dispatch({
-      type: HOUSES_ERROR,
-      payload: console.log(error),
-    });
-  }
+export const fetchHouses = () => (dispatch) => {
+  houses.fetchHouses().then((houses) => {
+    dispatch(receiveHouses(houses));
+    return houses;
+  });
 };
 
-export default getHouses;
+export const removeHouse = (id) => (dispatch) => {
+  houses.removeHouse(id).then((response) => {
+    dispatch(fetchHouses());
+    return response;
+  });
+};
+
+export const addHouse = (house) => (dispatch) => {
+  houses.addHouse(house).then((response) => {
+    if (response === 'Created') {
+      dispatch(fetchHouses());
+    }
+    return response;
+  });
+};
