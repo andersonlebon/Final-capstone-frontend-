@@ -7,19 +7,18 @@ const PrevArrow = ({ className, style, onClick }) => (
       ...style,
       display: 'block',
       background: '#97bf0f',
-      width: 'auto',
-      height: 'auto',
-      padding: '10px 20px 10px 1px',
+      padding: '25px 2px 25px 30px',
+      marginLeft: '25px',
       right: '0',
       zIndex: '2',
       borderTopRightRadius: '50%',
       borderBottomRightRadius: '50%',
-      border: '1.5px solid #97bf0f',
+      border: '1px solid #97cf1f',
     }}
     onClick={onClick}
     onKeyDown={onClick}
     role="button"
-    aria-label="Previous Icon"
+    aria-label="Previous Arrow"
     tabIndex={0}
   />
 );
