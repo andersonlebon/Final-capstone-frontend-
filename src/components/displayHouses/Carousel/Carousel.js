@@ -24,8 +24,8 @@ const Carousel = ({ houses }) => {
     autoplay: true,
     autoplaySpeed: 2000,
     dots: true,
-    nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     responsive: [
       {
         breakpoint: 1024,
