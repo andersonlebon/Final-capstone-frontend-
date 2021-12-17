@@ -1,6 +1,7 @@
 import jwt from 'jwt-decode';
 
 const AUTHENTICATE_USER = 'AUTHENTICATE_USER';
+const LOGOUT_USER = 'LOGOUT_USER';
 const initialState = { user: localStorage.getItem('token') ? jwt(localStorage.getItem('token')) : null };
 const baseURL = 'http://localhost:4000/api/v1';
 // const baseURL = 'https://house-booking-api.herokuapp.com/api/v1';
@@ -32,12 +33,24 @@ export const authenticateUser = (username) => async (dispatch) => {
 };
 
 
+export const logoutUser = () => async (dispatch) => {
+  localStorage.removeItem('token');
+  dispatch({
+    type: LOGOUT_USER,
+    payload: null,
+  });
+};
+
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'AUTHENTICATE_USER':
       return {
         ...state.user,
         user: action.payload,
+      };
+    case 'LOGOUT_USER':
+      return {
+        user: null,
       };
     default:
       return state;
