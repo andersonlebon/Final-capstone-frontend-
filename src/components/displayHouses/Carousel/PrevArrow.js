@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const PrevIcon = ({ className, style, onClick }) => (
+const PrevArrow = ({ className, style, onClick }) => (
   <div
     className={className}
     style={{
@@ -24,14 +24,14 @@ const PrevIcon = ({ className, style, onClick }) => (
   />
 );
 
-export default PrevIcon;
+export default PrevArrow;
 
-PrevIcon.propTypes = {
+PrevArrow.propTypes = {
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   onClick: PropTypes.func,
 };
-PrevIcon.defaultProps = {
+PrevArrow.defaultProps = {
   className: '',
   style: {},
   onClick: () => {},

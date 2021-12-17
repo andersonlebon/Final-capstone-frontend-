@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const NextIcon = ({ className, style, onClick }) => (
+const NextArrow = ({ className, style, onClick }) => (
   <div
     className={className}
     style={{
@@ -14,7 +14,7 @@ const NextIcon = ({ className, style, onClick }) => (
       zIndex: '2',
       borderTopLeftRadius: '50%',
       borderBottomLeftRadius: '50%',
-      border: '1.5px solid #97b',
+      border: '1.5px solid #97bf0f',
     }}
     onClick={onClick}
     onKeyDown={onClick}
@@ -24,15 +24,15 @@ const NextIcon = ({ className, style, onClick }) => (
   />
 );
 
-export default NextIcon;
+export default NextArrow;
 
-NextIcon.propTypes = {
+NextArrow.propTypes = {
   className: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   onClick: PropTypes.func,
 };
 
-NextIcon.defaultProps = {
+NextArrow.defaultProps = {
   className: '',
   style: {},
   onClick: () => {},

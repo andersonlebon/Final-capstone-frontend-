@@ -11,8 +11,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import IconButton from '@material-ui/core/IconButton';
 import HouseInfos from '../HouseInfos';
-import NextIcon from './NextIcon';
-import PrevIcon from './PrevIcon';
+import NextArrow from './NextArrow';
+import PrevArrow from './PrevArrow';
 import style from './Carousel.module.scss';
 
 const Carousel = ({ houses }) => {
@@ -24,8 +24,8 @@ const Carousel = ({ houses }) => {
     autoplay: true,
     autoplaySpeed: 2000,
     dots: true,
-    nextIcon: <NextIcon />,
-    prevIcon: <PrevIcon />,
+    nextIcon: <NextArrow />,
+    prevIcon: <PrevArrow />,
     responsive: [
       {
         breakpoint: 768,
