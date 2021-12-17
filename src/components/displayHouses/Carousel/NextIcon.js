@@ -17,7 +17,7 @@ const NextIcon = ({ className, style, onClick }) => (
       zIndex: '1',
       borderTopLeftRdius: '50%',
       borderBottomLeftRadius: '50%',
-      border: '1.5px solid #98bf0f',
+      border: '1.5px solid #000',
     }}
     onClick={onClick}
     onKeyDown={onClick}
