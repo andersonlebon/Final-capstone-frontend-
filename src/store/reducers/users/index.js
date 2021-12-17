@@ -32,6 +32,20 @@ export const authenticateUser = (username) => async (dispatch) => {
   }
 };
 
+export const registerUser = (username) => async (dispatch) => {
+  const fetched = await fetch(`${baseURL}/users`, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    method: 'POST',
+    body: JSON.stringify({ name: username }),
+  });
+
+  if (fetched.statusText === 'Created') {
+    await (authenticateUser(username))(dispatch);
+  }
+};
 
 export const logoutUser = () => async (dispatch) => {
   localStorage.removeItem('token');
