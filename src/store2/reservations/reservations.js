@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
-import { slice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-export const resrvationslice = slice({
+export const reservationsReducer = createSlice({
   name: 'reservation',
   initialState: {
     reservations: [],
@@ -13,10 +13,11 @@ export const resrvationslice = slice({
     },
     removeReservation(state, action) {
       state.reservations = state.reservations.filter(
-        (reservation) => reservation.id !== action.payload.id,
+        (reservation) => reservation.id !== action.payload.id
       );
     },
   },
 });
 
-export const { addReservation, removeReservation } = resrvationslice.actions;
+export const { addReservation, removeReservation } = reservationsReducer.actions;
+export default reservationsReducer.reducer;
