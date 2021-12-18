@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Carousel from './Carousel/Carousel';
-import { fetchHouses } from '../../store/actions/housesActions';
+import { fetchHouses } from '../../store/action/houseActions';
 import style from './Houses.module.scss';
 
 const Houses = () => {
