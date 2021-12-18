@@ -1,4 +1,4 @@
-import ActionTypes from '../types/action-types';
+import ActionTypes from '../../types/action-types';
 
 const initialState = { houses: [] };
 
