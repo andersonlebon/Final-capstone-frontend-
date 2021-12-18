@@ -1,13 +1,12 @@
-import baseApi from '../baseApi';
+import baseApi from '../store/baseApi';
 
-const fetchHouses = async () =>
-  baseApi.get('api/v1/users/{user_id}/houses').then((res) => {
-    let houses = [];
-    if (res.status === 200) {
-      houses = res.data;
-    }
-    return houses;
-  });
+const fetchHouses = async () => baseApi.get('api/v1/users/{user_id}/houses').then((res) => {
+  let houses = [];
+  if (res.status === 200) {
+    houses = res.data;
+  }
+  return houses;
+});
 
 const removeHouse = async (houseId) => {
   const token = localStorage.fetchHouse('token');
