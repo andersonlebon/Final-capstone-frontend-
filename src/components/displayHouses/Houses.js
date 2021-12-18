@@ -11,10 +11,14 @@ const Houses = () => {
 
   useEffect(() => {
     if (!getHouses && houses.length === 0) {
-      setGetHouses(true);
       dispatch(fetchHouses());
     }
-  });
+  }, []);
+
+  useEffect(() => {
+    setGetHouses(houses.houses);
+  }, [houses]);
+
   return (
     <div className={style.main_container}>
       <header className={style.main_header}>
