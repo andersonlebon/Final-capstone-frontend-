@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
-import { housesReducer } from './houses/houses';
-import { reservationsReducer } from './reservations/reservations';
+import houseReducer from './houses/houses';
+import reservationReducer from './reservations/reservations';
 
 const reducer = combineReducers({
-  houses: housesReducer,
-  reservations: reservationsReducer,
+  houseReducer,
+  reservationReducer,
 });
 
 export default configureStore({

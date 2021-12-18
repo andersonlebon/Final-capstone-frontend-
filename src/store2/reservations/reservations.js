@@ -3,9 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const reservationsReducer = createSlice({
   name: 'reservation',
-  initialState: {
-    reservations: [],
-  },
+  initialState: [],
 
   reducers: {
     addReservation(state, action) {
@@ -13,7 +11,7 @@ export const reservationsReducer = createSlice({
     },
     removeReservation(state, action) {
       state.reservations = state.reservations.filter(
-        (reservation) => reservation.id !== action.payload.id
+        (reservation) => reservation.id !== action.payload.id,
       );
     },
   },
