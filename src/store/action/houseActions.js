@@ -1,47 +1,30 @@
-import baseApi from '../baseApi';
+import houses from '../../api/houses';
 import ActionTypes from '../types/action-types';
 
-const fetchHouses = async () =>
-  baseApi.get('api/v1/users/{user_id}/houses').then((res) => {
-    let houses = [];
-    if (res.status === 200) {
-      houses = res.data;
-    }
+export const receiveHouses = (houses) => ({
+  type: ActionTypes.RECEIVE_HOUSES,
+  houses,
+});
+
+export const fetchHouses = () => (dispatch) => {
+  houses.fetchHouses().then((houses) => {
+    dispatch(receiveHouses(houses));
     return houses;
   });
-
-  const removeHouse = async (houseId) => {
-  const token = localStorage.fetchHouse('token');
-  const config = {
-    headers: {
-      Authorisation: token,
-    },
-  };
-  baseApi.delete(`api/v1/users/{user_id}/houses/${houseId}`, config).then((response) => response);
 };
 
-const addHouse = async (house) => {
-  const token = localStorage.fetchHouse('token');
-  const config = {
-    headers: {
-      Authorisation: token,
-    },
-  };
-  const body = {
-    user_id: house.userId,
-    title: house.title,
-    house_description: house.house_description,
-    image: house.image,
-    price: house.price,
-    availability: house.availability,
-    discount: house.discount,
-  };
-  const result = baseApi
-    .post('api/v1/users/{user_id}/houses', body, config)
-    .then((response) => response.data);
-
-  return result;
+export const removeHouse = (id) => (dispatch) => {
+  houses.removeHouse(id).then((response) => {
+    dispatch(fetchHouses());
+    return response;
+  });
 };
 
-export default { fetchHouses, addHouse, removeHouse };
-
+export const addHouse = (house) => (dispatch) => {
+  houses.addHouse(house).then((response) => {
+    if (response === 'Created') {
+      dispatch(fetchHouses());
+    }
+    return response;
+  });
+};
