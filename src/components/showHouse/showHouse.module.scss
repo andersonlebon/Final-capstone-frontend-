@@ -47,7 +47,6 @@
       flex-direction: column;
       width: 100%;
       gap: 0.5rem;
-      
 
       h1 {
         font-size: 2.5rem;
@@ -55,7 +54,7 @@
         text-align: end;
       }
 
-       p {
+      p {
         font-size: 1.5rem;
         font-weight: bold;
         text-align: end;
@@ -69,7 +68,6 @@
       margin-top: 1.5rem;
       width: 70%;
       align-self: flex-end;
-
 
       .finance_details {
         display: flex;
@@ -129,7 +127,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-  
+
       span {
         text-transform: uppercase;
         font-weight: bold;
@@ -139,7 +137,7 @@
         align-self: center;
       }
     }
-    
+
     .btn_container {
       align-self: flex-end;
       margin-top: 5rem;
@@ -151,15 +149,15 @@
         color: #fff;
         text-transform: uppercase;
         font-size: 1.5rem;
-        letter-spacing: .15rem;
-        transition: all .3s;
+        letter-spacing: 0.15rem;
+        transition: all 0.3s;
         position: relative;
         overflow: hidden;
         z-index: 1;
         border: none;
         cursor: pointer;
-  
-        &:after {
+
+        &::after {
           content: '';
           position: absolute;
           bottom: 0;
@@ -170,8 +168,8 @@
           border-radius: 10rem;
           z-index: -2;
         }
-  
-        &:before {
+
+        &::before {
           content: '';
           position: absolute;
           bottom: 0;
@@ -179,15 +177,15 @@
           width: 0%;
           height: 100%;
           background-color: darken(#97bf0f, 4%);
-          transition: all .3s;
+          transition: all 0.3s;
           border-radius: 10rem;
           z-index: -1;
         }
-  
+
         &:hover {
           color: #fff;
-  
-          &:before {
+
+          &::before {
             width: 100%;
           }
         }

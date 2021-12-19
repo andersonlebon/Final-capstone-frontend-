@@ -4,7 +4,12 @@
   "rules": {
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true,
-    "csstree/validator": true
+    "csstree/validator": {
+      "types": {
+        "color": "| darken(<color>, <percentage[0,100]>)",
+        "rgba": "| rgba(<hex-color>, <number[0,1]>)"
+      }
+    }
   },
   "ignoreFiles": [
     "build/**",
