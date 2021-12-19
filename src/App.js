@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
@@ -11,9 +11,9 @@ import RemoveHouses from './components/RemoveHouses';
 import Reserve from './components/Reserve';
 import { housesApi, getHouses, addHouse } from './store2/houses/houses';
 
-function App({ store }) {
+function App() {
   const dispatch = useDispatch();
-  const { houses } = useSelector((state) => state);
+  const { houseReducer: houseStore } = useSelector((state) => state);
   useEffect(() => {
     housesApi(dispatch, getHouses);
     housesApi(dispatch, addHouse, {
@@ -35,7 +35,10 @@ function App({ store }) {
         <article className="main">
           <Routes>
             <Route path="/" element={<Houses />} />
-            <Route path="/myreservations" element={<MyReservations store={store} />} />
+            <Route
+              path="/myreservations"
+              element={<MyReservations store={houseStore} />}
+            />
             <Route path="/addhouse" element={<AddHouses />} />
             <Route path="/removehouse" element={<RemoveHouses />} />
             <Route path="/reserve" element={<Reserve />} />
