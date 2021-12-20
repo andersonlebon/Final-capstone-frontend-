@@ -1,12 +1,13 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import {
   SidebarContainer, Icon, CloseIcon, NavLink, SidebarWrapper, SideBtnWrap, SidebarMenu,
 } from './SidebarElements';
 import SocialIcons from '../socialIcons';
 
-const Sidebar = () => (
-  <SidebarContainer>
-    <Icon>
+const Sidebar = ({ isOpen, toggle }) => (
+  <SidebarContainer isOpen={isOpen} onClick={toggle}>
+    <Icon onClick={toggle}>
       <CloseIcon />
     </Icon>
     <SidebarWrapper>
