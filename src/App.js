@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import './sass/main.scss';
 import Navbar from './components/layout/Navbar';
 import Houses from './components/displayHouses/Houses';
 import MyReservations from './components/MyReservations';
@@ -10,12 +11,13 @@ import AddHouses from './components/AddHouses';
 import RemoveHouses from './components/RemoveHouses';
 import Reserve from './components/Reserve';
 import ShowHouse from './components/showHouse/showHouse';
+import resevationsApi from './api/reservations';
+import { getReservations } from './store/reducers/myReservations/index';
 
 function App() {
   const dispatch = useDispatch();
-  const { houseReducer: houseStore, reservationReducer } = useSelector((state) => state);
+  const { reservationsReducer: store } = useSelector((state) => state);
   useEffect(() => {
-    housesApi(dispatch, getHouses);
     resevationsApi(dispatch, getReservations);
   }, []);
 
@@ -30,7 +32,7 @@ function App() {
             <Route path="/myreservations" element={<MyReservations />} />
             <Route path="/addhouse" element={<AddHouses />} />
             <Route path="/removehouse" element={<RemoveHouses />} />
-            <Route path="/reserve" element={<Reserve />} />
+            <Route path="/reserve" exact element={<Reserve store={store} />} />
           </Routes>
         </article>
       </section>
