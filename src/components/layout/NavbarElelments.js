@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 
+export const MobileIcon = styled.div`
+  justify-self: end;
+`;
+
 export const Bars = styled(FaBars)`
   border-color: transparent;
   font-size: 2rem;
