@@ -4,6 +4,22 @@ import { useDispatch } from 'react-redux';
 import { addHouse, fetchHouses } from '../store/action/houseActions';
 
 const AddHouses = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = { id: 1 };
+  const [house, setHouse] = useState({ user_id: user.id, availability: 12 });
+
+  const handleNewHouse = (e) => {
+    setHouse((state) => ({ ...state, [e.target.name]: e.target.value }));
+  };
+
+  const addNewHouse = (e) => {
+    e.preventDefault();
+    dispatch(addHouse(house));
+    dispatch(fetchHouses());
+    navigate('/');
+  };
+
   return (
     <>
       <h1>Add house</h1>
