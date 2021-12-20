@@ -3,6 +3,7 @@ $secondary-color: #fff;
 
 .reservation {
     // center the reservation the content with flexbox
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -10,7 +11,7 @@ $secondary-color: #fff;
     align-items: center;
     flex-direction: column;
     // set the background color
-    background-color: #97bf0f;
+    background-color: #96bf0f57;
     color: $secondary-color;
     h2 {
         font-size: 1.6rem;
@@ -67,9 +68,10 @@ $secondary-color: #fff;
 
 }
 
-.bg-image {
+.image-bg {
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
 }

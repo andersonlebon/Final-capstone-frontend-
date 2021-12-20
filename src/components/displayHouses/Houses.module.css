@@ -1,0 +1,58 @@
+.main_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main_container .main_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 0;
+  margin-top: 8rem;
+  width: 100%;
+}
+
+.main_container .main_header h1 {
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 4px;
+  text-align: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding-right: 20rem;
+}
+
+.main_container .main_header p {
+  color: grey;
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding-right: 20rem;
+}
+
+.main_container .divider {
+  max-width: 10%;
+  border-bottom: 4px dotted grey;
+  margin-left: 65%;
+  padding-top: 2.5rem;
+  font-weight: bold;
+}
+/*# sourceMappingURL=Houses.module.css.map */
