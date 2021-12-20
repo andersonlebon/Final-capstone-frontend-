@@ -3,7 +3,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './components/layout/Navbar';
+import './sass/main.css';
+// import Navbar from './components/layout/Navbar';
 import Houses from './components/Houses';
 import MyReservations from './components/MyReservations';
 import AddHouses from './components/AddHouses';
@@ -30,21 +31,21 @@ function App() {
 
   return (
     <Router>
-      <section className="container">
-        <Navbar />
-        <article className="main">
-          <Routes>
-            <Route path="/" element={<Houses />} />
-            <Route
-              path="/myreservations"
-              element={<MyReservations store={houseStore} />}
-            />
-            <Route path="/addhouse" element={<AddHouses />} />
-            <Route path="/removehouse" element={<RemoveHouses />} />
-            <Route path="/reserve" element={<Reserve />} />
-          </Routes>
-        </article>
-      </section>
+      {/* <section className="container"> */}
+      {/* <Navbar /> */}
+      <article className="main">
+        <Routes>
+          <Route path="/" element={<Houses />} />
+          <Route
+            path="/myreservations"
+            element={<MyReservations store={houseStore} />}
+          />
+          <Route path="/addhouse" element={<AddHouses />} />
+          <Route path="/removehouse" element={<RemoveHouses />} />
+          <Route path="/reserve" element={<Reserve />} />
+        </Routes>
+      </article>
+      {/* </section> */}
     </Router>
   );
 }

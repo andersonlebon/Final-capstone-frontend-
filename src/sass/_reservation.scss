@@ -1,0 +1,44 @@
+.reservation {
+    // center the reservation the content with flexbox
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // set the background color
+    background-color: #9b1b1b;
+    color: #fff;
+    h2 {
+        font-size: 1.6rem;
+        width: 95%;
+        text-align: center;
+        padding: 30px 0;
+        border-bottom: 1px solid #fff;
+    }
+
+    p {
+        width: 90%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 88%;
+        select {
+            width: 100%;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width :100%;
+            padding: 10px 5px;
+        }
+    }
+
+}

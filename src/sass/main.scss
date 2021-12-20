@@ -1,3 +1,8 @@
- body {
-     background-color: #8f8c8c;
- }
+
+@import './reservation'
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
