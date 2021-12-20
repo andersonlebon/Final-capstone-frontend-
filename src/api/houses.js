@@ -21,25 +21,16 @@ const removeHouse = async (houseId) => {
 };
 
 const addHouse = async (house) => {
-  const token = localStorage.fetchHouse('token');
+  const token = localStorage.getItem('token');
   const config = {
     headers: {
       Authorisation: token,
     },
   };
-  const body = {
-    user_id: house.userId,
-    title: house.title,
-    house_description: house.house_description,
-    image: house.image,
-    price: house.price,
-    availability: house.availability,
-    discount: house.discount,
-  };
+  const body = house;
   const result = baseApi
-    .post('api/v1/users/{user_id}/houses', body, config)
+    .post(`api/v1/users/${house.user_id}/houses`, body, config)
     .then((response) => response.data);
-
   return result;
 };
 
