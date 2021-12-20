@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Pinterest,
-  Telegram,
-  Whatsapp,
-} from 'react-bootstrap-icons';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import PinterestIcon from '@mui/icons-material/Pinterest';
+import IconButton from '@material-ui/core/IconButton';
+import TelegramIcon from '@mui/icons-material/Telegram';
 import logo from './logo.png';
-import style from './navbar.module.css';
+import style from './navbar.module.scss';
 
 const Navbar = ({ logo }) => (
   <nav className={style.navbar}>
@@ -46,24 +44,41 @@ const Navbar = ({ logo }) => (
     </ul>
     <footer className={style.footer}>
       <div className={style.social_icons}>
-        <div className={style.icon_div}>
-          <Facebook className={style.icon} />
-        </div>
-        <div className={style.icon_div}>
-          <Twitter className={style.icon} />
-        </div>
-        <div className={style.icon_div}>
-          <Instagram className={style.icon} />
-        </div>
-        <div className={style.icon_div}>
-          <Pinterest className={style.icon} />
-        </div>
-        <div className={style.icon_div}>
-          <Telegram className={style.icon} />
-        </div>
-        <div className={style.icon_div}>
-          <Whatsapp className={style.icon} />
-        </div>
+        <IconButton
+          className={style.icon_btn}
+          aria-label="facebook.com"
+          onClick={() => window.open('https://facebook.com', '_blank')}
+        >
+          <FacebookRoundedIcon color="action" sx={{ fontSize: 30 }} />
+        </IconButton>
+        <IconButton
+          className={style.icon_btn}
+          aria-label="twitter.com"
+          onClick={() => window.open('https://twitter.com', '_blank')}
+        >
+          <TwitterIcon color="action" sx={{ fontSize: 30 }} />
+        </IconButton>
+        <IconButton
+          className={style.icon_btn}
+          aria-label="instagram.com"
+          onClick={() => window.open('https://instagram.com', '_blank')}
+        >
+          <InstagramIcon color="action" sx={{ fontSize: 30 }} />
+        </IconButton>
+        <IconButton
+          className={style.icon_btn}
+          aria-label="pinterest.com"
+          onClick={() => window.open('https://pinterest.com', '_blank')}
+        >
+          <PinterestIcon color="action" sx={{ fontSize: 30 }} />
+        </IconButton>
+        <IconButton
+          className={style.icon_btn}
+          aria-label="telegram.com"
+          onClick={() => window.open('https://telegram.com', '_blank')}
+        >
+          <TelegramIcon color="action" sx={{ fontSize: 30 }} />
+        </IconButton>
       </div>
       <p>
         &copy;
