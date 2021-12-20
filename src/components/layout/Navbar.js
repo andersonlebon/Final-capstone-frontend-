@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -62,12 +63,10 @@ const Navbar = ({ logo, toggle }) => (
 
 Navbar.defaultProps = {
   logo,
-  toggle,
 };
 
 Navbar.propTypes = {
   logo: PropTypes.string,
-  toggle: PropTypes.func,
 };
 
 export default Navbar;

@@ -14,35 +14,35 @@ const SocialIcons = () => (
       aria-label="facebook.com"
       onClick={() => window.open('https://facebook.com', '_blank')}
     >
-      <FacebookRoundedIcon color="action" sx={{ fontSize: 30 }} />
+      <FacebookRoundedIcon color="action" sx={{ fontSize: 20 }} />
     </IconButton>
     <IconButton
       className={style.icon_btn}
       aria-label="twitter.com"
       onClick={() => window.open('https://twitter.com', '_blank')}
     >
-      <TwitterIcon color="action" sx={{ fontSize: 30 }} />
+      <TwitterIcon color="action" sx={{ fontSize: 20 }} />
     </IconButton>
     <IconButton
       className={style.icon_btn}
       aria-label="instagram.com"
       onClick={() => window.open('https://instagram.com', '_blank')}
     >
-      <InstagramIcon color="action" sx={{ fontSize: 30 }} />
+      <InstagramIcon color="action" sx={{ fontSize: 20 }} />
     </IconButton>
     <IconButton
       className={style.icon_btn}
       aria-label="pinterest.com"
       onClick={() => window.open('https://pinterest.com', '_blank')}
     >
-      <PinterestIcon color="action" sx={{ fontSize: 30 }} />
+      <PinterestIcon color="action" sx={{ fontSize: 20 }} />
     </IconButton>
     <IconButton
       className={style.icon_btn}
       aria-label="telegram.com"
       onClick={() => window.open('https://telegram.com', '_blank')}
     >
-      <TelegramIcon color="action" sx={{ fontSize: 30 }} />
+      <TelegramIcon color="action" sx={{ fontSize: 20 }} />
     </IconButton>
   </div>
 );
