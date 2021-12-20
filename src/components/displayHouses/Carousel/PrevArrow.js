@@ -7,7 +7,7 @@ const PrevArrow = ({ className, style, onClick }) => (
       ...style,
       display: 'block',
       background: '#97cf1f',
-      padding: '25px 2px 25px 30px',
+      padding: '20px 2px 20px 30px',
       marginLeft: '25px',
       right: '0',
       zIndex: '2',

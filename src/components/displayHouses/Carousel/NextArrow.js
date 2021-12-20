@@ -7,7 +7,7 @@ const NextArrow = ({ className, style, onClick }) => (
       ...style,
       display: 'block',
       background: '#98bf1f',
-      padding: '25px 30px 25px 2px',
+      padding: '20px 30px 20px 2px',
       right: '0',
       zIndex: '2',
       borderTopLeftRadius: '50%',

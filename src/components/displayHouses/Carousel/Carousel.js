@@ -27,21 +27,14 @@ const Carousel = ({ houses }) => {
     nextArrow: <NextArrow />,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
+        breakpoint: 992,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -69,21 +62,21 @@ const Carousel = ({ houses }) => {
               aria-label="facebook.com"
               onClick={() => window.open('https://facebook.com', '_blank')}
             >
-              <FacebookRoundedIcon color="action" sx={{ fontSize: 30 }} />
+              <FacebookRoundedIcon color="action" sx={{ fontSize: 20 }} />
             </IconButton>
             <IconButton
               className={style.icon_btn}
               aria-label="twitter.com"
               onClick={() => window.open('https://twitter.com', '_blank')}
             >
-              <TwitterIcon color="action" sx={{ fontSize: 30 }} />
+              <TwitterIcon color="action" sx={{ fontSize: 20 }} />
             </IconButton>
             <IconButton
               className={style.icon_btn}
               aria-label="instagram.com"
               onClick={() => window.open('https://instagram.com', '_blank')}
             >
-              <InstagramIcon color="action" sx={{ fontSize: 30 }} />
+              <InstagramIcon color="action" sx={{ fontSize: 20 }} />
             </IconButton>
           </div>
         </div>

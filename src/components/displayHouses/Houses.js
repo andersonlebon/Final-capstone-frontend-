@@ -24,7 +24,7 @@ const Houses = () => {
       <header className={style.main_header}>
         <h1>Available Houses</h1>
         <p>Please select a suitable house</p>
-        <div className={style.divider} />
+        <div className={style.divider_home} />
       </header>
       <section className={style.main_body}>
         <Carousel houses={houses} />

@@ -3,55 +3,110 @@
   flex-direction: column;
   width: 100%;
   padding: 0% 10px;
-  gap: 25px;
+  gap: 1.8rem;
   align-items: center;
   justify-content: center;
-}
 
-.title_div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .title_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  .info_title {
-    color: black;
-    font-size: 2.5rem;
-    text-transform: capitalize;
+    .info_title {
+      color: black;
+      font-size: 2rem;
+      text-transform: capitalize;
+    }
   }
-}
 
-.divider {
-  max-width: 20%;
-  border-bottom: 4px dotted grey;
-  font-weight: bold;
+  .divider {
+    width: 30%;
+    border-bottom: 5px dotted grey;
+    font-weight: bold;
+  }
+
+  .description_div {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      color: grey;
+      font-size: 1rem;
+    }
+  }
 }
 
 .info_img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 350px;
+  height: 300px;
   border-radius: 100%;
 
   img {
-    width: 350px;
+    width: 250px;
     object-fit: cover;
-    height: 350px;
+    height: 250px;
     border-radius: 50%;
   }
 }
 
-.description_div {
-  display: flex;
-  flex-direction: column;
-
-  h2 {
-    color: grey;
-    font-size: 1.5rem;
-  }
-}
 
 @media (min-width: 768px) {
+
+  .info_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0% 10px;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .info_title {
+      color: black;
+      font-size: 2.5rem;
+      text-transform: capitalize;
+    }
+  }
+
+  .divider {
+    max-width: 20%;
+    border-bottom: 4px dotted grey;
+    font-weight: bold;
+  }
+
+  .info_img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    border-radius: 100%;
+
+    img {
+      width: 350px;
+      object-fit: cover;
+      height: 350px;
+      border-radius: 50%;
+    }
+  }
+
+  .description_div {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      color: grey;
+      font-size: 1.5rem;
+    }
+  }
+
   .divider {
     width: 55%;
   }

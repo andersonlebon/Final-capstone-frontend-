@@ -8,11 +8,13 @@ import AddHouses from './components/AddHouses';
 import RemoveHouses from './components/RemoveHouses';
 import Reserve from './components/Reserve';
 import ShowHouse from './components/showHouse/showHouse';
+import Sidebar from './components/layout/Sidebar/Sidebar';
 
 function App() {
   return (
     <Router>
       <section className="container">
+        <Sidebar />
         <Navbar />
         <article className="main">
           <Routes>
