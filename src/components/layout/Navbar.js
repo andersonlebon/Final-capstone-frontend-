@@ -1,19 +1,24 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import logo from './logo.png';
 import style from './navbar.module.scss';
 import SocialIcons from './socialIcons';
-import { Bars, NavLink, NavMenu } from './NavbarElelments';
+import {
+  Bars, NavLink, NavMenu, MobileIcon,
+} from './NavbarElelments';
 
-const Navbar = ({ logo }) => (
+const Navbar = ({ logo, toggle }) => (
   <>
     <nav className={style.navbar}>
       <h1 className={style.head}>
         <Link to="/" className={style.logo_div}>
           <img src={logo} alt="logo" width={100} height={100} />
         </Link>
-        <Bars />
+        <MobileIcon onClick={toggle}>
+          <Bars />
+        </MobileIcon>
       </h1>
       <div className={style.nav_body}>
         <NavMenu className={style.navlist}>
@@ -57,10 +62,12 @@ const Navbar = ({ logo }) => (
 
 Navbar.defaultProps = {
   logo,
+  toggle,
 };
 
 Navbar.propTypes = {
   logo: PropTypes.string,
+  toggle: PropTypes.func,
 };
 
 export default Navbar;
