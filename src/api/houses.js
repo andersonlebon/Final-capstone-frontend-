@@ -8,15 +8,15 @@ const fetchHouses = async () => baseApi.get('api/v1/users/{user_id}/houses').the
   return houses;
 });
 
-const removeHouse = async (houseId) => {
-  const token = localStorage.fetchHouse('token');
+const removeHouse = async (userId, houseId) => {
+  const token = localStorage.getItem('token');
   const config = {
     headers: {
       Authorisation: token,
     },
   };
   baseApi
-    .delete(`api/v1/users/{user_id}/houses/${houseId}`, config)
+    .delete(`api/v1/users/${userId}/houses/${houseId}`, config)
     .then((response) => response);
 };
 
