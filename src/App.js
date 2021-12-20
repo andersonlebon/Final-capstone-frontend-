@@ -10,23 +10,15 @@ import MyReservations from './components/MyReservations';
 import AddHouses from './components/AddHouses';
 import RemoveHouses from './components/RemoveHouses';
 import Reserve from './components/Reserve';
-import { housesApi, getHouses, addHouse } from './store2/houses/houses';
+import { resevationsApi, getReservations } from './store2/reservations/reservations';
+import { housesApi, getHouses } from './store2/houses/houses';
 
 function App() {
   const dispatch = useDispatch();
-  const { houseReducer: houseStore } = useSelector((state) => state);
+  const { houseReducer: houseStore, reservationReducer } = useSelector((state) => state);
   useEffect(() => {
     housesApi(dispatch, getHouses);
-    housesApi(dispatch, addHouse, {
-      title: 'My house222ww',
-      house_description: 'VIP',
-      location: 'KIGALI',
-      image: 'HTTPs/imageusrl',
-      price: 20,
-      availability: 10,
-      discount: '20.0',
-      user_id: 6,
-    });
+    resevationsApi(dispatch, getReservations);
   }, []);
 
   return (
@@ -38,11 +30,11 @@ function App() {
           <Route path="/" element={<Houses />} />
           <Route
             path="/myreservations"
-            element={<MyReservations store={houseStore} />}
+            element={<MyReservations store={reservationReducer} />}
           />
           <Route path="/addhouse" element={<AddHouses />} />
           <Route path="/removehouse" element={<RemoveHouses />} />
-          <Route path="/reserve" element={<Reserve />} />
+          <Route path="/reserve" element={<Reserve store={houseStore} />} />
         </Routes>
       </article>
       {/* </section> */}

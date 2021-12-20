@@ -1,3 +1,6 @@
+$primary-color: #00a8ff;
+$secondary-color: #fff;
+
 .reservation {
     // center the reservation the content with flexbox
     width: 100%;
@@ -7,14 +10,14 @@
     align-items: center;
     flex-direction: column;
     // set the background color
-    background-color: #9b1b1b;
-    color: #fff;
+    background-color: #97bf0f;
+    color: $secondary-color;
     h2 {
         font-size: 1.6rem;
         width: 95%;
         text-align: center;
         padding: 30px 0;
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid $secondary-color;
     }
 
     p {
@@ -27,18 +30,39 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        row-gap: 20px;
         width: 88%;
-        select {
-            width: 100%;
-            border: 1px solid #fff;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
 
-        input {
-            width :100%;
-            padding: 10px 5px;
-        }
+        select, input {
+            color: $secondary-color;
+
+            option {
+                color: black;
+                width: 50%;
+            }
+            width: 100%;
+            border: 1px solid $secondary-color;
+            padding: 10px;
+            border-radius: 50px;
+            outline: none;
+            appearance: none;
+            border: 1px solid $secondary-color;
+            background-color: transparent;
+         }
+
+         button {
+             width: auto;
+             align-self: center;
+             padding: 10px;
+             border-radius: 50px;
+             border: 1px solid $secondary-color;
+             background-color: transparent;
+             color: $secondary-color;
+
+             &:hover {
+                cursor: pointer;
+             }
+         }
     }
 
 }

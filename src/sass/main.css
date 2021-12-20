@@ -14,7 +14,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #9b1b1b;
+  background-color: #97bf0f;
   color: #fff;
 }
 
@@ -43,18 +43,42 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  row-gap: 20px;
   width: 88%;
 }
 
-.reservation form select {
+.reservation form select, .reservation form input {
+  color: #fff;
   width: 100%;
   border: 1px solid #fff;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 50px;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #fff;
+  background-color: transparent;
 }
 
-.reservation form input {
-  width: 100%;
-  padding: 10px 5px;
+.reservation form select option, .reservation form input option {
+  color: black;
+  width: 50%;
+}
+
+.reservation form button {
+  width: auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.reservation form button:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

@@ -6,20 +6,26 @@ const housesBasedURL = 'https://house-booking-api.herokuapp.com/api/v1/users/1/h
 
 export const housesApi = async (dispatch, action, newData = null) => {
   try {
-    if (newData == null) {
+    // if (newData.method === 'delete') {
+    //   await axios.delete(`${housesBasedURL}/${newData.id}`);
+    //   dispatch(action(newData.id));
+    // }
+    if (newData != null) {
+      await axios.post(`${housesBasedURL}`, newData);
+      dispatch(action(newData));
+    }
+
+    if (!newData) {
       const { data } = await axios.get(housesBasedURL);
       dispatch(action(data));
     }
-    if (newData != null) {
-      const { data } = await axios.post(housesBasedURL, newData);
-      dispatch(action(data));
-    }
+    // send delete request
   } catch ({ message }) {
-    dispatch({ type: 'housesFail', payload: { error: message } });
+    dispatch({ type: `${action.type}Fail`, payload: { error: message } });
   }
 };
 
-export const housesReducer = createSlice({
+const housesReducer = createSlice({
   name: 'houses',
   initialState: [],
   reducers: {
