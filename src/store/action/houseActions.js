@@ -13,8 +13,8 @@ export const fetchHouses = () => (dispatch) => {
   });
 };
 
-export const removeHouse = (id) => (dispatch) => {
-  houses.removeHouse(id).then((response) => {
+export const removeHouse = (userId, id) => (dispatch) => {
+  houses.removeHouse(userId, id).then((response) => {
     dispatch(fetchHouses());
     return response;
   });
@@ -22,7 +22,7 @@ export const removeHouse = (id) => (dispatch) => {
 
 export const addHouse = (house) => (dispatch) => {
   houses.addHouse(house).then((response) => {
-    if (response === 'Created') {
+    if (response.id) {
       dispatch(fetchHouses());
     }
     return response;
