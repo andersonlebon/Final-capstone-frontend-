@@ -7,7 +7,7 @@
 }
 
 .container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 15% 85%;
-  height: 100vh;
+  height: 100vh; */
 }

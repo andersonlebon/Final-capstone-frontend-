@@ -16,7 +16,7 @@ import { getReservations } from './store/reducers/myReservations/index';
 
 function App() {
   const dispatch = useDispatch();
-  const { reservationsReducer: store } = useSelector((state) => state);
+  const store = useSelector((state) => state);
   useEffect(() => {
     resevationsApi(dispatch, getReservations);
   }, []);
@@ -24,7 +24,9 @@ function App() {
   return (
     <Router>
       <section className="container">
-        <Navbar />
+        <Routes>
+          <Route path="/" element={<Navbar />} />
+        </Routes>
         <article className="main">
           <Routes>
             <Route path="/" element={<Houses />} />
@@ -32,7 +34,7 @@ function App() {
             <Route path="/myreservations" element={<MyReservations />} />
             <Route path="/addhouse" element={<AddHouses />} />
             <Route path="/removehouse" element={<RemoveHouses />} />
-            <Route path="/reserve" exact element={<Reserve store={store} />} />
+            <Route path="/reserve" element={<Reserve store={store} />} />
           </Routes>
         </article>
       </section>

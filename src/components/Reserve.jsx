@@ -1,3 +1,5 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable max-len */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
@@ -12,6 +14,7 @@ class Reserve extends Component {
     super(props);
     this.state = {
       selectedOption: null,
+      currentHouse: {},
       duration: '',
       price: 0,
       startDate: new Date(),
@@ -20,7 +23,14 @@ class Reserve extends Component {
 
   handleChange = ({ target: input }) => {
     const state = { ...this.state };
-    state[input.name] = input.value;
+    if (input.name === 'currentHouse') {
+      const { store } = this.props;
+      const selectedHouse = store.housesReducer.houses.find((house) => house.id == input.value);
+      state[input.name] = selectedHouse;
+      console.log(selectedHouse);
+    } else {
+      state[input.name] = input.value;
+    }
     this.setState(state);
   };
 
@@ -37,13 +47,17 @@ class Reserve extends Component {
   };
 
   render() {
-    const { store: reservations } = this.props;
+    const { store } = this.props;
+
     // const reservations = store.map((reservation) => (
     //   { value: reservation.id, label: reservation.title }  // eslint-disable-line
     // ));
 
     return (
       <section className="reservation">
+        <div className="image-bg">
+          <img src={this.state.currentHouse.image} alt={this.state.currentHouse.title} />
+        </div>
         <h2> BOOK A HOUSER</h2>
         <p className="description">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
@@ -54,10 +68,10 @@ class Reserve extends Component {
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <div className="form-group">
             <select
-              name="selectedOption"
+              name="currentHouse"
               onChange={(e) => this.handleChange(e)}
             >
-              {reservations.map((reservation) => (
+              {store.housesReducer.houses.map((reservation) => (
                 <option key={reservation.id} value={reservation.id}>
                   {reservation.title}
                 </option>

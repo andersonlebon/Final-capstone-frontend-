@@ -1,31 +1,40 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-trailing-spaces */
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getReservations } from '../store/reducers/myReservations';
+import reservationApi from '../api/reservations';
 
-const Myreservations = ({ store }) => ( 
+const Myreservations = () => {
   // render the store in table
-  <div>
-    <h2>My Reservations</h2>
-    <table className="table">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Duration</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        {store.map((reservation) => (
-          <tr key={reservation.id}>
-            <td>{reservation.title}</td>
-            <td>{reservation.duration}</td>
-            <td>{reservation.price}</td>
+  const dispatch = useDispatch();
+  const { reservationsReducer } = useSelector((state) => state);
+  useEffect(() => {
+    dispatch(reservationApi, getReservations);
+  }, []);
+  return (
+    <div>
+      <h2>My Reservations</h2>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Duration</th>
+            <th>Price</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-    
-);
- 
+        </thead>
+        <tbody>
+          {reservationsReducer.map((reservation) => (
+            <tr key={reservation.id}>
+              <td>{reservation.title}</td>
+              <td>{reservation.duration}</td>
+              <td>{reservation.price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
 export default Myreservations;
