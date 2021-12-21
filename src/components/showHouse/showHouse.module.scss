@@ -48,9 +48,10 @@
       align-items: center;
 
       h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: bold;
         text-align: end;
+        text-transform: uppercase;
         font-family: 'Lato', sans-serif;
       }
 
@@ -131,15 +132,18 @@
     }
 
     .more_house {
+      align-self: flex-end;
       margin-top: 1rem;
       display: flex;
       align-items: flex-end;
-      justify-content: flex-end;
+      justify-content: center;
+      
 
       span {
         text-transform: uppercase;
         font-weight: bold;
         font-size: 1rem;
+        padding-bottom: 4px;
         justify-self: center;
         align-self: center;
         font-family: 'Lato', sans-serif;
@@ -339,7 +343,7 @@
         span {
           text-transform: uppercase;
           font-weight: bold;
-          font-size: 0.6rem;
+          font-size: 1rem;
           margin-right: -10px;
           justify-self: flex-end;
           align-self: center;
