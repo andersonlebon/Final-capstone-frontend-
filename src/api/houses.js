@@ -29,7 +29,7 @@ const addHouse = async (house) => {
   };
   const body = house;
   const result = baseApi
-    .post(`api/v1/users/${house.user_id}/houses`, body, config)
+    .post(`api/v1/users/${house.get('user_id')}/houses`, body, config)
     .then((response) => response.data);
   return result;
 };
