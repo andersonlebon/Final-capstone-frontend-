@@ -35,8 +35,6 @@ img {
   }
 }
 
-
-
 .navbar {
   height: 10%;
   padding: 1rem;
@@ -49,7 +47,6 @@ img {
     align-items: center;
     padding-right: 15px;
   }
-
 }
 
 @media screen and (min-width: 768px) {
@@ -64,7 +61,7 @@ img {
     padding: 0;
     margin: 0;
   }
-  
+
   .head {
     width: 100%;
     text-align: center;
@@ -74,24 +71,24 @@ img {
     align-items: center;
     padding-left: 3rem;
   }
-  
+
   .footer {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     margin-top: 10px;
-  
+
     .social_icons {
       display: flex;
       justify-content: center;
       gap: 0.5rem;
     }
-  
+
     .icon_btn {
       padding: 0;
       margin: 0;
     }
-  
+
     p {
       font-size: 0.8rem;
       font-weight: bold;

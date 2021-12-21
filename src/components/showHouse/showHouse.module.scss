@@ -17,7 +17,6 @@
       object-fit: cover;
       height: 250px;
       border-radius: 50%;
-
     }
 
     .btn_home {
@@ -193,11 +192,6 @@
   }
 }
 
-
-
-
-
-
 @media screen and (min-width: 768px) {
   .show_container {
     display: grid;
@@ -205,7 +199,7 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-  
+
     .show_img {
       display: flex;
       flex-direction: column;
@@ -214,19 +208,18 @@
       margin-top: 14rem;
       padding-bottom: 4rem;
       height: 100%;
-  
+
       img {
         width: 250px;
         object-fit: cover;
         height: 250px;
         border-radius: 50%;
-  
       }
-  
+
       .btn_home {
         align-self: flex-start;
         margin-top: 6rem;
-  
+
         .home {
           background: #98bf1f;
           border: 1.5px solid #97cf1f;
@@ -238,33 +231,33 @@
         }
       }
     }
-  
+
     .show_content {
       display: flex;
       flex-direction: column;
       gap: 10px;
       padding-top: 10rem;
       padding-right: 2rem;
-  
+
       .show_header {
         display: flex;
         flex-direction: column;
         width: 100%;
         gap: 0.5rem;
-  
+
         h1 {
           font-size: 1.5rem;
           font-weight: bold;
           text-align: end;
         }
-  
+
         p {
           font-size: 1rem;
           font-weight: bold;
           text-align: end;
         }
       }
-  
+
       .show_finance {
         display: flex;
         flex-direction: column;
@@ -272,16 +265,16 @@
         margin-top: 1.5rem;
         width: 85%;
         align-self: flex-end;
-  
+
         .finance_details {
           display: flex;
           justify-content: space-between;
-  
+
           .details {
             font-size: 1rem;
             color: black;
             padding: 0 15px;
-  
+
             .details_text {
               padding-left: 5px;
               font-size: 1rem;
@@ -289,34 +282,34 @@
             }
           }
         }
-  
+
         .finance_detail {
           display: flex;
           justify-content: space-between;
           background-color: lightgrey;
           padding: 1rem 0;
-  
+
           .details {
             font-size: 1rem;
             color: black;
             padding: 0 15px;
           }
         }
-  
+
         .show_discount {
           margin-top: 10px;
-  
+
           p {
             padding: 0 15px;
             display: flex;
             gap: 0.5rem;
-  
+
             .dis_amt {
               text-transform: uppercase;
               font-weight: bold;
               font-size: 1rem;
             }
-  
+
             .dis_text {
               font-size: 1rem;
               text-transform: capitalize;
@@ -325,13 +318,13 @@
           }
         }
       }
-  
+
       .more_house {
         margin-top: 1rem;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-  
+
         span {
           text-transform: uppercase;
           font-weight: bold;
@@ -341,11 +334,11 @@
           align-self: center;
         }
       }
-  
+
       .btn_container {
         align-self: flex-end;
         margin-top: 3rem;
-  
+
         .btn {
           display: inline-block;
           padding: 1rem 2rem;
@@ -360,7 +353,7 @@
           z-index: 1;
           border: none;
           cursor: pointer;
-  
+
           &::after {
             content: '';
             position: absolute;
@@ -372,7 +365,7 @@
             border-radius: 10rem;
             z-index: -2;
           }
-  
+
           &::before {
             content: '';
             position: absolute;
@@ -385,10 +378,10 @@
             border-radius: 10rem;
             z-index: -1;
           }
-  
+
           &:hover {
             color: #fff;
-  
+
             &::before {
               width: 100%;
             }
@@ -398,4 +391,3 @@
     }
   }
 }
-
