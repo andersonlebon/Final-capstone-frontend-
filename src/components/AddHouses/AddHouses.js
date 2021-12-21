@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addHouse } from '../store/action/houseActions';
+import { addHouse } from '../../store/action/houseActions';
 
 const AddHouses = () => {
   const navigate = useNavigate();
