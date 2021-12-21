@@ -11,7 +11,7 @@
   color: #fff;
   display: flex;
   align-items: center;
-  
+
   .add_form {
     display: flex;
     flex-direction: column;
@@ -45,14 +45,14 @@
       border-radius: 5px;
     }
 
-    ::placeholder{
+    ::placeholder {
       color: #fff;
       font-size: 0.8rem;
     }
 
     input[type=file]::file-selector-button {
       border: 1px solid #96b70e;
-      padding: .2em .4em;
+      padding: 0.2em 0.4em;
       border-radius: 15px;
       background-color: #fdfdfc;
       transition: 1s;
@@ -63,22 +63,20 @@
       background-color: #b4df09;
     }
 
-  .btn_primary{
-    padding: 0.5rem 2.5rem;
-    border: none;
-    border-radius: 3px;
-    background-color: #96b70e;
-    color: #fafafa;
-    cursor: pointer;
-    margin: 1rem 0.5rem;
-    margin-top: auto;
-    align-self: flex-end;
-    border: 1px solid #fff;
-  }
+    .btn_primary {
+      padding: 0.5rem 2.5rem;
+      border-radius: 3px;
+      background-color: #96b70e;
+      color: #fafafa;
+      cursor: pointer;
+      margin: 1rem 0.5rem;
+      margin-top: auto;
+      align-self: flex-end;
+      border: 1px solid #fff;
+    }
 
-  .btn_primary:hover{
-    opacity: 0.8;
+    .btn_primary:hover {
+      opacity: 0.8;
+    }
   }
 }
-}
-

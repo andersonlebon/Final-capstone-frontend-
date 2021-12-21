@@ -19,33 +19,34 @@
     justify-content: flex-start;
     width: 100%;
   }
- 
-  .card{
+
+  .card {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 1rem 0.5rem;
     flex: 0 1 320px;
     display: flex;
     flex-direction: column;
+
     .image {
       width: 100%;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
     }
 
-    .house_info{
+    .house_info {
       padding: 0.5rem;
       color: rgb(100, 100, 100);
     }
 
-    .info{
+    .info {
       display: flex;
       justify-content: space-between;
       margin-top: 0.3rem;
     }
   }
 
-  .btn_danger{
+  .btn_danger {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 3px;
@@ -56,7 +57,7 @@
     margin-top: auto;
   }
 
-  .btn_danger:hover{
+  .btn_danger:hover {
     opacity: 0.8;
   }
 }
