@@ -4,8 +4,8 @@ import './App.css';
 import Navbar from './components/layout/Navbar';
 import Houses from './components/displayHouses/Houses';
 import MyReservations from './components/MyReservations';
-import AddHouses from './components/AddHouses';
-import RemoveHouses from './components/RemoveHouses';
+import AddHouses from './components/AddHouses/AddHouses';
+import RemoveHouses from './components/RemoveHouses/RemoveHouses';
 import Reserve from './components/Reserve';
 import ShowHouse from './components/showHouse/showHouse';
 
