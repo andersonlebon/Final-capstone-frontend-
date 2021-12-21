@@ -60,7 +60,7 @@ const RemoveHouses = () => {
 
   return (
     <div className={style.container}>
-      <h1>
+      <h1 className={style.page_title}>
         Remove house
       </h1>
       {houses.length > 0 ? (
