@@ -1,6 +1,7 @@
 .show_container {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40% 60%;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -10,13 +11,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-top: 14rem;
-    padding-bottom: 4rem;
 
     img {
-      width: 500px;
+      width: 250px;
       object-fit: cover;
-      height: 500px;
+      height: 250px;
       border-radius: 50%;
     }
 
@@ -28,7 +27,7 @@
         border: 1.5px solid #97cf1f;
         border-top-right-radius: 50%;
         border-bottom-right-radius: 50%;
-        padding: 20px 10px 20px 40px;
+        padding: 10px 2px 10px 10px;
         color: white;
         cursor: pointer;
       }
@@ -38,26 +37,29 @@
   .show_content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding-top: 10rem;
-    padding-right: 2rem;
+    gap: 10px;
+    align-items: center;
 
     .show_header {
       display: flex;
       flex-direction: column;
       width: 100%;
       gap: 0.5rem;
+      align-items: center;
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: bold;
         text-align: end;
+        text-transform: uppercase;
+        font-family: 'Lato', sans-serif;
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: bold;
         text-align: end;
+        font-family: 'Lato', sans-serif;
       }
     }
 
@@ -67,21 +69,24 @@
       gap: 1rem;
       margin-top: 1.5rem;
       width: 70%;
-      align-self: flex-end;
+      align-self: center;
 
       .finance_details {
         display: flex;
         justify-content: space-between;
 
         .details {
-          font-size: 1.4rem;
+          font-size: 1rem;
           color: black;
           padding: 0 15px;
+          font-family: 'Lato', sans-serif;
+          font-weight: 400;
 
           .details_text {
             padding-left: 5px;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: bold;
+            font-family: 'Lato', sans-serif;
           }
         }
       }
@@ -93,14 +98,16 @@
         padding: 1rem 0;
 
         .details {
-          font-size: 1.4rem;
+          font-size: 1rem;
           color: black;
           padding: 0 15px;
+          font-family: 'Lato', sans-serif;
+          font-weight: 400;
         }
       }
 
       .show_discount {
-        margin-top: 10px;
+        margin-top: 5px;
 
         p {
           padding: 0 15px;
@@ -110,45 +117,50 @@
           .dis_amt {
             text-transform: uppercase;
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1rem;
+            font-family: 'Lato', sans-serif;
           }
 
           .dis_text {
-            font-size: 1.5rem;
+            font-size: 1rem;
             text-transform: capitalize;
             font-weight: bold;
+            font-family: 'Lato', sans-serif;
           }
         }
       }
     }
 
     .more_house {
+      align-self: flex-end;
       margin-top: 1rem;
       display: flex;
-      align-items: center;
-      justify-content: flex-end;
+      align-items: flex-end;
+      justify-content: center;
 
       span {
         text-transform: uppercase;
         font-weight: bold;
         font-size: 1rem;
-        margin-right: -10px;
+        padding-bottom: 4px;
         justify-self: center;
         align-self: center;
+        font-family: 'Lato', sans-serif;
       }
     }
 
     .btn_container {
       align-self: flex-end;
-      margin-top: 5rem;
+      margin-right: 1rem;
 
       .btn {
         display: inline-block;
-        padding: 1.5rem 3rem;
+        padding: 1rem 2rem;
         border-radius: 10rem;
         color: #fff;
         text-transform: uppercase;
-        font-size: 1.5rem;
+        font-size: 1rem;
+        font-family: 'Lato', sans-serif;
         letter-spacing: 0.15rem;
         transition: all 0.3s;
         position: relative;
@@ -187,6 +199,206 @@
 
           &::before {
             width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .show_container {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    .show_img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 14rem;
+      padding-bottom: 4rem;
+      height: 100%;
+
+      img {
+        width: 250px;
+        object-fit: cover;
+        height: 250px;
+        border-radius: 50%;
+      }
+
+      .btn_home {
+        align-self: flex-start;
+        margin-top: 6rem;
+
+        .home {
+          background: #98bf1f;
+          border: 1.5px solid #97cf1f;
+          border-top-right-radius: 50%;
+          border-bottom-right-radius: 50%;
+          padding: 15px 10px 15px 20px;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .show_content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 10rem;
+      padding-right: 2rem;
+
+      .show_header {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+
+        h1 {
+          font-size: 1.5rem;
+          font-weight: bold;
+          text-align: end;
+        }
+
+        p {
+          font-size: 1rem;
+          font-weight: bold;
+          text-align: end;
+        }
+      }
+
+      .show_finance {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        width: 85%;
+        align-self: flex-end;
+
+        .finance_details {
+          display: flex;
+          justify-content: space-between;
+
+          .details {
+            font-size: 1rem;
+            color: black;
+            padding: 0 15px;
+
+            .details_text {
+              padding-left: 5px;
+              font-size: 1rem;
+              font-weight: bold;
+            }
+          }
+        }
+
+        .finance_detail {
+          display: flex;
+          justify-content: space-between;
+          background-color: lightgrey;
+          padding: 1rem 0;
+
+          .details {
+            font-size: 1rem;
+            color: black;
+            padding: 0 15px;
+          }
+        }
+
+        .show_discount {
+          margin-top: 10px;
+
+          p {
+            padding: 0 15px;
+            display: flex;
+            gap: 0.5rem;
+
+            .dis_amt {
+              text-transform: uppercase;
+              font-weight: bold;
+              font-size: 1rem;
+            }
+
+            .dis_text {
+              font-size: 1rem;
+              text-transform: capitalize;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .more_house {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        span {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 1rem;
+          margin-right: -10px;
+          justify-self: flex-end;
+          align-self: center;
+        }
+      }
+
+      .btn_container {
+        align-self: flex-end;
+        margin-top: 3rem;
+
+        .btn {
+          display: inline-block;
+          padding: 1rem 2rem;
+          border-radius: 10rem;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 1.5rem;
+          letter-spacing: 0.15rem;
+          transition: all 0.3s;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          border: none;
+          cursor: pointer;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #97bf0f;
+            border-radius: 10rem;
+            z-index: -2;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: darken(#97bf0f, 4%);
+            transition: all 0.3s;
+            border-radius: 10rem;
+            z-index: -1;
+          }
+
+          &:hover {
+            color: #fff;
+
+            &::before {
+              width: 100%;
+            }
           }
         }
       }
