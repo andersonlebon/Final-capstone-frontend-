@@ -25,7 +25,9 @@
     .form_head {
       text-align: center;
       font-size: 1.3rem;
+      margin: 1.5rem 0;
     }
+
     input,
     textarea {
       margin: 1rem 0;
@@ -45,9 +47,21 @@
 
     ::placeholder{
       color: #fff;
+      font-size: 0.8rem;
     }
 
-  }
+    input[type=file]::file-selector-button {
+      border: 1px solid #96b70e;
+      padding: .2em .4em;
+      border-radius: 15px;
+      background-color: #fdfdfc;
+      transition: 1s;
+      cursor: pointer;
+    }
+
+    input[type=file]::file-selector-button:hover {
+      background-color: #b4df09;
+    }
 
   .btn_primary{
     padding: 0.5rem 2.5rem;
@@ -59,10 +73,12 @@
     margin: 1rem 0.5rem;
     margin-top: auto;
     align-self: flex-end;
+    border: 1px solid #fff;
   }
 
   .btn_primary:hover{
     opacity: 0.8;
   }
+}
 }
 
