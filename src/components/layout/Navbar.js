@@ -23,27 +23,33 @@ const Navbar = ({ logo, toggle }) => (
       </h1>
       <div className={style.nav_body}>
         <NavMenu className={style.navlist}>
+          <div className={style.navlink_div}>
+            <NavLink className={style.items} to="/" activeStyle>
+              Houses
+            </NavLink>
+          </div>
 
-          <NavLink className={style.items} to="/" activeStyle>
-            Houses
-          </NavLink>
-
-          <NavLink className={style.items} to="/myreservations" activeStyle>
-            My Reservations
-          </NavLink>
-
-          <NavLink className={style.items} to="/addhouse" activeStyle>
-            Add House
-          </NavLink>
-
-          <NavLink className={style.items} to="/removehouse" activeStyle>
-            Remove House
-          </NavLink>
-
-          <NavLink className={style.items} to="/reserve" activeStyle>
-            Reserve
-          </NavLink>
-
+          <div className={style.navlink_div}>
+            <NavLink className={style.items} to="/myreservations" activeStyle>
+              My Reservations
+            </NavLink>
+          </div>
+          <div className={style.navlink_div}>
+            {' '}
+            <NavLink className={style.items} to="/addhouse" activeStyle>
+              Add House
+            </NavLink>
+          </div>
+          <div className={style.navlink_div}>
+            <NavLink className={style.items} to="/removehouse" activeStyle>
+              Remove House
+            </NavLink>
+          </div>
+          <div className={style.navlink_div}>
+            <NavLink className={style.items} to="/reserve" activeStyle>
+              Reserve
+            </NavLink>
+          </div>
         </NavMenu>
         <footer className={style.footer}>
           <SocialIcons />
@@ -52,7 +58,7 @@ const Navbar = ({ logo, toggle }) => (
             {' '}
             <span>{new Date().getFullYear()}</span>
             {' '}
-            House Booking all
+            all
             rights reserved
           </p>
         </footer>

@@ -1,9 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 ul {
   list-style-type: none;
 }
 
 .logo_div {
-  width: 4rem;
+  width: 5rem;
   height: 4rem;
   cursor: pointer;
 
@@ -31,9 +35,7 @@ img {
   }
 }
 
-.sidebar-links {
-  text-align: center;
-} 
+
 
 .navbar {
   height: 10%;
@@ -49,7 +51,6 @@ img {
   }
 
 }
-
 
 @media screen and (min-width: 768px) {
   .navbar {
@@ -78,7 +79,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-top: 15px;
+    margin-top: 10px;
   
     .social_icons {
       display: flex;
@@ -92,9 +93,16 @@ img {
     }
   
     p {
-      font-size: 0.5rem;
+      font-size: 0.8rem;
       font-weight: bold;
       align-self: center;
     }
   }
+}
+
+.navlink_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

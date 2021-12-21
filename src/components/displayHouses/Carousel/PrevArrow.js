@@ -5,11 +5,13 @@ const PrevArrow = ({ className, style, onClick }) => (
     className={className}
     style={{
       ...style,
-      display: 'block',
+      display: 'flex',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
       background: '#97cf1f',
-      padding: '15px 2px 15px 30px',
-      marginLeft: '46px',
-      marginTop: '0.5rem',
+      padding: '20px 0px 20px 30px',
+      marginLeft: '60px',
+      marginTop: '18rem',
       right: '0',
       zIndex: '2',
       borderTopRightRadius: '50%',

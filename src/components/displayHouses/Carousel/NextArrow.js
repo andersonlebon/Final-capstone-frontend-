@@ -5,10 +5,13 @@ const NextArrow = ({ className, style, onClick }) => (
     className={className}
     style={{
       ...style,
-      display: 'block',
+      display: 'flex',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
       background: '#98bf1f',
-      padding: '15px 30px 15px 2px',
-      marginRight: '20px',
+      padding: '20px 30px 20px 0px',
+      marginRight: '40px',
+      marginTop: '18rem',
       right: '0',
       zIndex: '2',
       borderTopLeftRadius: '50%',
