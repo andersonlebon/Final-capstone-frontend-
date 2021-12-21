@@ -12,12 +12,21 @@ const AddHouses = () => {
   const [house, setHouse] = useState({ user_id: user.id, availability: 12 });
 
   const handleNewHouse = (e) => {
-    setHouse((state) => ({ ...state, [e.target.name]: e.target.value }));
+    setHouse((state) => ({
+      ...state,
+      [e.target.name]: e.target.name === 'image'
+        ? e.target.files[0]
+        : e.target.value,
+    }));
   };
 
   const addNewHouse = (e) => {
     e.preventDefault();
-    dispatch(addHouse(house));
+    const formData = new FormData();
+    Object.keys(house).forEach((k) => {
+      formData.append(k, house[k]);
+    });
+    dispatch(addHouse(formData));
     navigate('/');
   };
 
@@ -31,7 +40,13 @@ const AddHouses = () => {
         <input type="number" name="availability" onChange={handleNewHouse} placeholder="Availability" min="1" required />
         <input type="number" name="price" onChange={handleNewHouse} placeholder="Price" required />
         <input type="number" min="0" name="discount" onChange={handleNewHouse} placeholder="Discount" required />
-        <input type="text" name="image" onChange={handleNewHouse} placeholder="Image" required />
+        <input
+          name="image"
+          type="file"
+          accept="image/*"
+          multiple={false}
+          onChange={handleNewHouse}
+        />
         <input type="submit" value="Save" className={style.btn_primary} />
       </form>
     </div>
