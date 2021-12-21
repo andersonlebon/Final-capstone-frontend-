@@ -10,7 +10,7 @@ const RemoveHouses = () => {
 
   const houseStore = useSelector((state) => state.housesReducer.houses);
   const [houses, setHouses] = useState(houseStore.filter((house) => house.user_id === user.id));
-  console.log(houses);
+
   const deleteHouse = (userId, id) => {
     dispatch(removeHouse(userId, id));
     setHouses((state) => state.filter((house) => house.id !== id));
