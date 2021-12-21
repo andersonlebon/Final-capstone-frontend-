@@ -17,32 +17,34 @@ const Myreservations = () => {
       <h2>My Reservations</h2>
       <ul className="allReserved">
         {reservationsReducer.map((reservation) => (
-          <li key={reservation.id}>
-            <div className="reserved-card">
-              <div className="reserved-img">
-                <img src={reservation.house.image} alt="reservation" />
-              </div>
-              <div className="reservation-info">
-                <h3 className="title">{reservation.house.title}</h3>
-                <p>{reservation.house.house_description}</p>
-                <ul className="reserved-info-list">
-                  <li>
-                    <span>Rent duration: </span>
-                    {reservation.rent_duration}
-                  </li>
-                  <li>
-                    <span>Start day: </span>
-                    {reservation.rent_start_date}
-                  </li>
-                  <li>
-                    <span>Total price: </span>
-                    {reservation.rent_duration
-                      * parseInt(reservation.house.price, 10)}
-                  </li>
-                </ul>
-              </div>
+          <li key={reservation.id} className="reserved-card">
+            <div className="reserved-img">
+              <img src={reservation.house.image} alt="reservation" />
             </div>
-            <button type="button">Cancel Reservation </button>
+            <div className="reservation-info">
+              <h3 className="title">{reservation.house.title}</h3>
+              <p>{reservation.house.house_description}</p>
+              <ul className="reserved-info-list">
+                <li>
+                  <span>Rent duration: </span>
+                  {reservation.rent_duration}
+                </li>
+                <li>
+                  <span>Location city: </span>
+                  {reservation.house.location}
+                </li>
+                <li>
+                  <span>Start day: </span>
+                  {reservation.rent_start_date}
+                </li>
+                <li>
+                  <span>Total price: </span>
+                  {reservation.rent_duration
+                      * parseInt(reservation.house.price, 10)}
+                </li>
+              </ul>
+              <button type="button">Cancel Reservation </button>
+            </div>
           </li>
         ))}
       </ul>
