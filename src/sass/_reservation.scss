@@ -1,5 +1,5 @@
 $primary-color: #00a8ff;
-$secondary-color: black;
+$secondary-color: #fff;
 
 .reservation {
     // center the reservation the content with flexbox
@@ -13,11 +13,12 @@ $secondary-color: black;
     // set the background color
     color: $secondary-color;
     h2 {
-        font-size: 1.6rem;
+        z-index: 10;
         width: 95%;
         text-align: center;
         padding: 30px 0;
         border-bottom: 1px solid $secondary-color;
+        text-transform: uppercase;
     }
 
     p {
@@ -27,7 +28,6 @@ $secondary-color: black;
     }
 
     form {
-        z-index: 10;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -42,28 +42,40 @@ $secondary-color: black;
                 width: 50%;
             }
             width: 100%;
-            border: 1px solid $secondary-color;
-            padding: 10px;
+            padding: 12px;
             border-radius: 50px;
             outline: none;
             appearance: none;
-            border: 1px solid $secondary-color;
+            border: 1px solid wheat;
             background-color: transparent;
          }
 
          button {
              width: auto;
              align-self: center;
-             padding: 10px;
+             padding: 14px;
              border-radius: 50px;
-             border: 1px solid $secondary-color;
-             background-color: transparent;
+             border: 1px solid wheat;
+             background-color: #263004fd;
              color: $secondary-color;
 
              &:hover {
                 cursor: pointer;
              }
          }
+    }
+
+    .form-bg {
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        left: 0;
+        width: 93%;
+        height: 80%;
+        background-color: #364407d5;
+        border-radius: 10px;
     }
 
 }
@@ -87,6 +99,37 @@ $secondary-color: black;
         height: 100%;
         z-index: 1;
         background-color: #364407;
-        opacity: 0.8;
+        opacity: 0.79;
+    }
+}
+
+.react-datepicker {
+    background-color: #b0b895 !important;
+    // .react-datepicker__current-month, .react-datepicker__day-name {
+    //      color: $secondary-color !important;
+    // }
+
+    .react-datepicker__navigation, .react-datepicker__navigation--next {
+        right: 0;
+        background: black !important;
+        color: blue !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .reservation {
+
+        .form-bg {
+            width: 50%;
+            form  {
+                flex-direction: row;
+                flex-wrap: wrap;
+                 
+                .form-group, .react-datepicker-wrapper {
+                    width: 45%;
+                    margin: 0 15px;
+                }
+            }
+        }
     }
 }

@@ -57,55 +57,53 @@ const Reserve = (props) => {
         <img src={state.currentHouse.image} alt={state.currentHouse.title} />
         <div className="img" />
       </div>
-      <h2> BOOK A HOUSER</h2>
-      <p className="description">
-        {state.currentHouse.description}
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
-        facilis hic necessitatibus reprehenderit expedita eveniet, error quo,
-        voluptates dolor tenetur ea praesentium aliquam mollitia et accusamus
-        asperiores, esse exercitationem incidunt?
-      </p>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="form-group">
-          <select
-            name="currentHouse"
-            onChange={(e) => handleChange(e)}
-          >
-            {store.housesReducer.houses.map((reservation) => (
-              <option key={reservation.id} value={reservation.id}>
-                {reservation.title}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            onChange={(e) => handleChange(e)}
-            name="duration"
-            placeholder="Duration"
+      <div className="form-bg">
+        <h2>
+          BOOK YOUR
+          {` ${state.currentHouse.title}`}
+        </h2>
+        <p className="description">
+          {state.currentHouse.house_description}
+        </p>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div className="form-group">
+            <select name="currentHouse" onChange={(e) => handleChange(e)}>
+              {store.housesReducer.houses.map((reservation) => (
+                <option key={reservation.id} value={reservation.id}>
+                  {reservation.title}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              onChange={(e) => handleChange(e)}
+              name="duration"
+              placeholder="Duration"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="number"
+              className="form-control"
+              onChange={(e) => handleChange(e)}
+              name="price"
+              placeholder="Price"
+            />
+          </div>
+          <DatePicker
+            placeholder="form"
+            selected={state.startDate}
+            onChange={(date) => onChangeDate(date)}
           />
-        </div>
-        <div className="form-group">
-          <input
-            type="number"
-            className="form-control"
-            onChange={(e) => handleChange(e)}
-            name="price"
-            placeholder="Price"
-          />
-        </div>
-        <DatePicker
-          placeholder="form"
-          selected={state.startDate}
-          onChange={(date) => onChangeDate(date)}
-        />
-        {/* <Select options={reservations} /> */}
-        <button type="submit" className="btn btn-primary">
-          Add Reservation
-        </button>
-      </form>
+          {/* <Select options={reservations} /> */}
+          <button type="submit" className="btn btn-primary">
+            Add Reservation
+          </button>
+        </form>
+      </div>
     </section>
   );
 };

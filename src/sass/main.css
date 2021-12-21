@@ -15,15 +15,16 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: black;
+  color: #fff;
 }
 
 .reservation h2 {
-  font-size: 1.6rem;
+  z-index: 10;
   width: 95%;
   text-align: center;
   padding: 30px 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #fff;
+  text-transform: uppercase;
 }
 
 .reservation p {
@@ -33,7 +34,6 @@
 }
 
 .reservation form {
-  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,16 +49,15 @@
 }
 
 .reservation form select, .reservation form input {
-  color: black;
+  color: #fff;
   width: 100%;
-  border: 1px solid black;
-  padding: 10px;
+  padding: 12px;
   border-radius: 50px;
   outline: none;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  border: 1px solid black;
+  border: 1px solid wheat;
   background-color: transparent;
 }
 
@@ -72,15 +71,37 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  padding: 10px;
+  padding: 14px;
   border-radius: 50px;
-  border: 1px solid black;
-  background-color: transparent;
-  color: black;
+  border: 1px solid wheat;
+  background-color: #263004fd;
+  color: #fff;
 }
 
 .reservation form button:hover {
   cursor: pointer;
+}
+
+.reservation .form-bg {
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  left: 0;
+  width: 93%;
+  height: 80%;
+  background-color: #364407d5;
+  border-radius: 10px;
 }
 
 .image-bg {
@@ -103,6 +124,34 @@
   height: 100%;
   z-index: 1;
   background-color: #364407;
-  opacity: 0.8;
+  opacity: 0.79;
+}
+
+.react-datepicker {
+  background-color: #b0b895 !important;
+}
+
+.react-datepicker .react-datepicker__navigation, .react-datepicker .react-datepicker__navigation--next {
+  right: 0;
+  background: black !important;
+  color: blue !important;
+}
+
+@media (min-width: 768px) {
+  .reservation .form-bg {
+    width: 50%;
+  }
+  .reservation .form-bg form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .reservation .form-bg form .form-group, .reservation .form-bg form .react-datepicker-wrapper {
+    width: 45%;
+    margin: 0 15px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
