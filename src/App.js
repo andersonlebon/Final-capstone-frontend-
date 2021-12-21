@@ -4,15 +4,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import './sass/main.scss';
-import Navbar from './components/layout/Navbar';
+// import Navbar from './components/layout/Navbar';
 import Houses from './components/displayHouses/Houses';
 import MyReservations from './components/MyReservations';
-import AddHouses from './components/AddHouses';
-import RemoveHouses from './components/RemoveHouses';
+import AddHouses from './components/AddHouses/AddHouses';
+import RemoveHouses from './components/RemoveHouses/RemoveHouses';
 import Reserve from './components/Reserve';
 import ShowHouse from './components/showHouse/showHouse';
 import resevationsApi from './api/reservations';
 import { getReservations } from './store/reducers/myReservations/index';
+import Navigation from './NavPages';
 
 function App() {
   const dispatch = useDispatch();
@@ -24,9 +25,10 @@ function App() {
   return (
     <Router>
       <section className="container">
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<Navbar />} />
-        </Routes>
+        </Routes> */}
+        <Navigation />
         <article className="main">
           <Routes>
             <Route path="/" element={<Houses />} />
