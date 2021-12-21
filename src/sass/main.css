@@ -15,8 +15,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #96bf0f57;
-  color: #fff;
+  color: black;
 }
 
 .reservation h2 {
@@ -24,7 +23,7 @@
   width: 95%;
   text-align: center;
   padding: 30px 0;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid black;
 }
 
 .reservation p {
@@ -34,6 +33,7 @@
 }
 
 .reservation form {
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,16 +49,16 @@
 }
 
 .reservation form select, .reservation form input {
-  color: #fff;
+  color: black;
   width: 100%;
-  border: 1px solid #fff;
+  border: 1px solid black;
   padding: 10px;
   border-radius: 50px;
   outline: none;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  border: 1px solid #fff;
+  border: 1px solid black;
   background-color: transparent;
 }
 
@@ -74,9 +74,9 @@
       align-self: center;
   padding: 10px;
   border-radius: 50px;
-  border: 1px solid #fff;
+  border: 1px solid black;
   background-color: transparent;
-  color: #fff;
+  color: black;
 }
 
 .reservation form button:hover {
@@ -89,5 +89,20 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+.image-bg img {
+  height: 100%;
+  width: 100%;
+}
+
+.image-bg .img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #364407;
+  opacity: 0.8;
 }
 /*# sourceMappingURL=main.css.map */

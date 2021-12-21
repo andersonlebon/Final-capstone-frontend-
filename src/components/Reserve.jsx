@@ -3,112 +3,111 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 // import Select from 'react-select';
 // import CustomSelect from 'custom-select-menu/custom-select';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchHouses } from '../store/action/houseActions';
 
-class Reserve extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedOption: null,
-      currentHouse: {},
-      duration: '',
-      price: 0,
-      startDate: new Date(),
-    };
-  }
+const Reserve = (props) => {
+  const store = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const [state, setState] = useState({
+    selectedOption: null,
+    currentHouse: {},
+    duration: '',
+    price: 0,
+    startDate: new Date(),
+  });
 
-  handleChange = ({ target: input }) => {
-    const state = { ...this.state };
+  useEffect(() => {
+    dispatch(fetchHouses());
+  }, []);
+
+  const handleChange = ({ target: input }) => {
+    const stateM = { ...state };
     if (input.name === 'currentHouse') {
-      const { store } = this.props;
+      const { store } = props;
       const selectedHouse = store.housesReducer.houses.find((house) => house.id == input.value);
-      state[input.name] = selectedHouse;
+      stateM[input.name] = selectedHouse;
       console.log(selectedHouse);
     } else {
-      state[input.name] = input.value;
+      stateM[input.name] = input.value;
     }
-    this.setState(state);
+    setState({ ...stateM });
   };
 
-  onChangeDate = (date) => {
-    const state = { ...this.state };
-    state.startDate = date;
-    this.setState(state);
+  const onChangeDate = (date) => {
+    const stateM = { ...state };
+    stateM.startDate = date;
+    setState({ ...stateM });
     console.log(date.getDay());
   };
 
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    console.log(state);
   };
 
-  render() {
-    const { store } = this.props;
-
-    // const reservations = store.map((reservation) => (
-    //   { value: reservation.id, label: reservation.title }  // eslint-disable-line
-    // ));
-
-    return (
-      <section className="reservation">
-        <div className="image-bg">
-          <img src={this.state.currentHouse.image} alt={this.state.currentHouse.title} />
+  return (
+    <section className="reservation">
+      <div className="image-bg">
+        <img src={state.currentHouse.image} alt={state.currentHouse.title} />
+        <div className="img" />
+      </div>
+      <h2> BOOK A HOUSER</h2>
+      <p className="description">
+        {state.currentHouse.description}
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
+        facilis hic necessitatibus reprehenderit expedita eveniet, error quo,
+        voluptates dolor tenetur ea praesentium aliquam mollitia et accusamus
+        asperiores, esse exercitationem incidunt?
+      </p>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <div className="form-group">
+          <select
+            name="currentHouse"
+            onChange={(e) => handleChange(e)}
+          >
+            {store.housesReducer.houses.map((reservation) => (
+              <option key={reservation.id} value={reservation.id}>
+                {reservation.title}
+              </option>
+            ))}
+          </select>
         </div>
-        <h2> BOOK A HOUSER</h2>
-        <p className="description">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
-          facilis hic necessitatibus reprehenderit expedita eveniet, error quo,
-          voluptates dolor tenetur ea praesentium aliquam mollitia et accusamus
-          asperiores, esse exercitationem incidunt?
-        </p>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <div className="form-group">
-            <select
-              name="currentHouse"
-              onChange={(e) => this.handleChange(e)}
-            >
-              {store.housesReducer.houses.map((reservation) => (
-                <option key={reservation.id} value={reservation.id}>
-                  {reservation.title}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              onChange={(e) => this.handleChange(e)}
-              name="duration"
-              placeholder="Duration"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="number"
-              className="form-control"
-              onChange={(e) => this.handleChange(e)}
-              name="price"
-              placeholder="Price"
-            />
-          </div>
-          <DatePicker
-            placeholder="form"
-            selected={this.state.startDate}
-            onChange={(date) => this.onChangeDate(date)}
+        <div className="form-group">
+          <input
+            type="text"
+            className="form-control"
+            onChange={(e) => handleChange(e)}
+            name="duration"
+            placeholder="Duration"
           />
-          {/* <Select options={reservations} /> */}
-          <button type="submit" className="btn btn-primary">
-            Add Reservation
-          </button>
-        </form>
-      </section>
-    );
-  }
-}
+        </div>
+        <div className="form-group">
+          <input
+            type="number"
+            className="form-control"
+            onChange={(e) => handleChange(e)}
+            name="price"
+            placeholder="Price"
+          />
+        </div>
+        <DatePicker
+          placeholder="form"
+          selected={state.startDate}
+          onChange={(date) => onChangeDate(date)}
+        />
+        {/* <Select options={reservations} /> */}
+        <button type="submit" className="btn btn-primary">
+          Add Reservation
+        </button>
+      </form>
+    </section>
+  );
+};
 
 export default Reserve;

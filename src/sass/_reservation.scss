@@ -1,5 +1,5 @@
 $primary-color: #00a8ff;
-$secondary-color: #fff;
+$secondary-color: black;
 
 .reservation {
     // center the reservation the content with flexbox
@@ -11,7 +11,6 @@ $secondary-color: #fff;
     align-items: center;
     flex-direction: column;
     // set the background color
-    background-color: #96bf0f57;
     color: $secondary-color;
     h2 {
         font-size: 1.6rem;
@@ -28,6 +27,7 @@ $secondary-color: #fff;
     }
 
     form {
+        z-index: 10;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -70,8 +70,23 @@ $secondary-color: #fff;
 
 .image-bg {
     position: absolute;
+    // background-color: #96bf0f11;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: #364407;
+        opacity: 0.8;
+    }
 }
