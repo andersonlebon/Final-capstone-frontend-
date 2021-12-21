@@ -51,12 +51,14 @@
         font-size: 1.5rem;
         font-weight: bold;
         text-align: end;
+        font-family: 'Lato', sans-serif;
       }
 
       p {
         font-size: 1.2rem;
         font-weight: bold;
         text-align: end;
+        font-family: 'Lato', sans-serif;
       }
     }
 
@@ -76,11 +78,14 @@
           font-size: 1rem;
           color: black;
           padding: 0 15px;
+          font-family: 'Lato', sans-serif;
+          font-weight: 400;
 
           .details_text {
             padding-left: 5px;
             font-size: 1rem;
             font-weight: bold;
+            font-family: 'Lato', sans-serif;
           }
         }
       }
@@ -95,6 +100,8 @@
           font-size: 1rem;
           color: black;
           padding: 0 15px;
+          font-family: 'Lato', sans-serif;
+          font-weight: 400;
         }
       }
 
@@ -110,12 +117,14 @@
             text-transform: uppercase;
             font-weight: bold;
             font-size: 1rem;
+            font-family: 'Lato', sans-serif;
           }
 
           .dis_text {
             font-size: 1rem;
             text-transform: capitalize;
             font-weight: bold;
+            font-family: 'Lato', sans-serif;
           }
         }
       }
@@ -133,6 +142,7 @@
         font-size: 1rem;
         justify-self: center;
         align-self: center;
+        font-family: 'Lato', sans-serif;
       }
     }
 
@@ -147,6 +157,7 @@
         color: #fff;
         text-transform: uppercase;
         font-size: 1rem;
+        font-family: 'Lato', sans-serif;
         letter-spacing: 0.15rem;
         transition: all 0.3s;
         position: relative;

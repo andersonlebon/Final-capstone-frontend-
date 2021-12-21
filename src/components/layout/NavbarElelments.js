@@ -25,24 +25,29 @@ export const Bars = styled(FaBars)`
 `;
 
 export const NavMenu = styled.div`
-  width: 100%;
-  height: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 4rem;
   }
 `;
 
 export const NavLink = styled(Link)`
   text-decoration: none;
-  margin-bottom: 1.5rem;
-  padding: 15px 20px 15px 20px;
   color: black; 
   font-weight: bold;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 12px;
+  padding: 15px 0;
+  padding-left: 5px;
   text-transform: uppercase;
-  width: 100%;
-  display: inline-block;
- 
+  display: block;
+  margin-left: 8px;
+  font-family: 'Lato', sans-serif;
+
+  @media screen and (min-width: 800px) {
+    font-size: 12px;
+  }
   
   &.active {
     color: white;

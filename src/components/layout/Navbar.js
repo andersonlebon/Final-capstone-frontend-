@@ -11,8 +11,8 @@ import {
 } from './NavbarElelments';
 
 const Navbar = ({ logo, toggle }) => (
-  <>
-    <nav className={style.navbar}>
+  <nav className={style.navbar}>
+    <div className={style.nav_head}>
       <h1 className={style.head}>
         <Link to="/" className={style.logo_div}>
           <img src={logo} alt="logo" width={100} height={100} />
@@ -23,48 +23,41 @@ const Navbar = ({ logo, toggle }) => (
       </h1>
       <div className={style.nav_body}>
         <NavMenu className={style.navlist}>
-          <div className={style.navlink_div}>
-            <NavLink className={style.items} to="/" activeStyle>
-              Houses
-            </NavLink>
-          </div>
+          <NavLink className={style.items} to="/" activeStyle>
+            Houses
+          </NavLink>
 
-          <div className={style.navlink_div}>
-            <NavLink className={style.items} to="/myreservations" activeStyle>
-              My Reservations
-            </NavLink>
-          </div>
-          <div className={style.navlink_div}>
-            {' '}
-            <NavLink className={style.items} to="/addhouse" activeStyle>
-              Add House
-            </NavLink>
-          </div>
-          <div className={style.navlink_div}>
-            <NavLink className={style.items} to="/removehouse" activeStyle>
-              Remove House
-            </NavLink>
-          </div>
-          <div className={style.navlink_div}>
-            <NavLink className={style.items} to="/reserve" activeStyle>
-              Reserve
-            </NavLink>
-          </div>
+          <NavLink className={style.items} to="/myreservations" activeStyle>
+            Reservations
+          </NavLink>
+
+          <NavLink className={style.items} to="/addhouse" activeStyle>
+            Add House
+          </NavLink>
+
+          <NavLink className={style.items} to="/removehouse" activeStyle>
+            Remove House
+          </NavLink>
+
+          <NavLink className={style.items} to="/reserve" activeStyle>
+            Reserve
+          </NavLink>
+
         </NavMenu>
-        <footer className={style.footer}>
-          <SocialIcons />
-          <p>
-            &copy;
-            {' '}
-            <span>{new Date().getFullYear()}</span>
-            {' '}
-            all
-            rights reserved
-          </p>
-        </footer>
       </div>
-    </nav>
-  </>
+    </div>
+    <footer className={style.footer}>
+      <SocialIcons />
+      <p>
+        &copy;
+        {' '}
+        <span>{new Date().getFullYear()}</span>
+        {' '}
+        all
+        rights reserved
+      </p>
+    </footer>
+  </nav>
 );
 
 Navbar.defaultProps = {
