@@ -13,13 +13,14 @@ const Myreservations = () => {
     dispatch(reservationApi, getReservations);
   }, []);
   return (
-    <div>
+    <section className="my-reservation-container">
       <h2>My Reservations</h2>
       <ul className="allReserved">
         {reservationsReducer.map((reservation) => (
           <li key={reservation.id} className="reserved-card">
             <div className="reserved-img">
               <img src={reservation.house.image} alt="reservation" />
+              <div className="reserved-img-color" />
             </div>
             <div className="reservation-info">
               <h3 className="title">{reservation.house.title}</h3>
@@ -48,7 +49,7 @@ const Myreservations = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 
