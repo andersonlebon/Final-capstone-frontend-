@@ -9,6 +9,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 // import Select from 'react-select';
 // import CustomSelect from 'custom-select-menu/custom-select';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { fetchHouses } from '../store/action/houseActions';
 import { addReservation } from '../store/reducers/myReservations/index';
 import reservationApi from '../api/reservations';
@@ -16,6 +17,7 @@ import reservationApi from '../api/reservations';
 const Reserve = (props) => {
   const store = useSelector((state) => state);
   const dispatch = useDispatch();
+  const history = useNavigate();
   const [state, setState] = useState({
     selectedOption: null,
     currentHouse: {},
@@ -62,6 +64,7 @@ const Reserve = (props) => {
     };
     console.log(newReservation);
     reservationApi(dispatch, addReservation, newReservation);
+    history('/');
   };
 
   return (
