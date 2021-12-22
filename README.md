@@ -8,21 +8,23 @@ The objective was to build a house booking application(with discount) where the 
 
 ## Screenshots
 
-#### Main auth page
+#### Login auth page
 
-![]()
+![login](login.png)
 
-#### Signup Page
+#### Main Page
 
-![]()
+![Main_page](Main_page.png)
 
-#### Home Page
+#### Remove House Page
 
-#### Details Page
+![removehouse](removehouse.png)
 
-#### Remove Houses
+#### Reservation Page
 
-#### Reserve
+#### Mobile version
+
+![mobile](mobile.png)
 
 ## Built With
 - React-Redux
