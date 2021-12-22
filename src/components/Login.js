@@ -21,6 +21,15 @@ const Login = () => {
 
   return (
     <div className="authenticate">
+
+      <h1>
+        Welcome to
+        <span className="company"> BookingHouse </span>
+      </h1>
+      <p>
+        Find the best houses from around the world.
+        BookingHouse makes it quick and easy to book just the right house for you.
+      </p>
       <form onSubmit={handleSubmit} className="login-form">
         <h2>Login</h2>
         <input type="text" onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
@@ -30,6 +39,7 @@ const Login = () => {
           <Link to="/signup" className="link"> SignUp </Link>
         </span>
       </form>
+
     </div>
   );
 };
