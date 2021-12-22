@@ -3,12 +3,90 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.main {
+  height: 100vh;
 }
 
 .container {
   display: grid;
   grid-template-rows: 15% 85%;
   height: 100vh;
+}
+
+.authenticate {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(66, 66, 66);
+  background: url('https://images.unsplash.com/photo-1573039608965-7c8e38125ef5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA0fHxob3VzZSUyMHdoaXRlfGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=500&q=60');
+  background-size: cover;
+  background-position: center;
+}
+
+.authenticate h1 {
+  margin: 0.5rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.authenticate p {
+  text-align: center;
+  width: 50%;
+}
+
+.company {
+  color: rgb(65, 139, 236);
+}
+
+.login-form {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 2rem 4rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px 5px #ccc;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.login-form h2 {
+  padding: 0.2rem;
+}
+
+.login-form input {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.navigate {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.btn {
+  background-color: #15a008;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.link {
+  color: rgb(9, 95, 209);
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
