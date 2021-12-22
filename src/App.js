@@ -21,11 +21,11 @@ import { getReservations } from './store/reducers/myReservations/index';
 import Navigation from './NavPages';
 
 function App() {
-  const { user } = useSelector((state) => state.userReducer);
+  const { userReducer, housesReducer: store } = useSelector((state) => state);
   const dispatch = useDispatch();
-
+  const { user } = userReducer;
   useEffect(() => {
-    resevationsApi(dispatch, getReservations);
+    resevationsApi(dispatch, getReservations, user.user_id);
   }, []);
 
   return (
@@ -44,7 +44,7 @@ function App() {
               <Route path="/myreservations" element={<MyReservations />} />
               <Route path="/addhouse" element={<AddHouses />} />
               <Route path="/removehouse" element={<RemoveHouses />} />
-              <Route path="/reserve/:houseId" element={<Reserve />} />
+              <Route path="/reserve/:houseId" element={<Reserve store={store} />} />
             </Routes>
           </article>
         </section>

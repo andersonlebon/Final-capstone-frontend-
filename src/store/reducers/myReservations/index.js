@@ -7,7 +7,7 @@ const reservationsReducer = createSlice({
 
   reducers: {
     RECIEVED(state, action) {
-      return [...action.payload];
+      return action.payload;
     },
     ADDED(state, action) {
       state.push(action.payload);

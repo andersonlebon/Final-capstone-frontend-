@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable max-len */
 /* eslint-disable radix */
 import React, { useState, useEffect } from 'react';
@@ -11,8 +12,8 @@ import reservationApi from '../api/reservations';
 
 const defaultImage = 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=875&q=80';
 
-const Reserve = () => {
-  const { housesReducer: store } = useSelector((state) => state);
+const Reserve = (props) => {
+  const { housesReducer: store, userReducer } = useSelector((state) => state);
   const dispatch = useDispatch();
   const history = useNavigate();
   const { houseId } = useParams();
@@ -29,10 +30,11 @@ const Reserve = () => {
     dispatch(fetchHouses());
     if (houseId !== 'new') {
       const stateM = { ...state };
-      const selectedHouse = store.houses.find(
-        (house) => house.id === parseInt(houseId),
+      const { store: store2 } = props;
+      const selectedHouse = store2.houses.find(
+        (house) => house.id === parseInt(houseId, 10),
       );
-      stateM.currentHouse = selectedHouse;
+      stateM.currentHouse = selectedHouse || {};
       setState({ ...stateM });
     }
   }, []);
@@ -40,7 +42,9 @@ const Reserve = () => {
   const handleChange = ({ target: input }) => {
     const stateM = { ...state };
     if (input.name === 'currentHouse') {
-      const selectedHouse = store.houses.find((house) => house.id === parseInt(input.value, 10));
+      const selectedHouse = store.houses.find(
+        (house) => house.id === parseInt(input.value, 10),
+      );
       stateM[input.name] = selectedHouse;
     } else {
       stateM[input.name] = input.value;
@@ -56,18 +60,23 @@ const Reserve = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const {
-      duration, price, currentHouse,
-    } = state;
+    const { duration, price, currentHouse } = state;
     const newReservation = {
       rent_duration: duration,
       rent_start_date: '2020-04-01',
       rent_total_price: price,
       house_ids: currentHouse.id,
-
     };
-    reservationApi(dispatch, addReservation, newReservation);
+    const { user_id: id } = userReducer.user;
+    reservationApi(dispatch, addReservation, id, newReservation);
+    console.log(newReservation);
     history('/myreservations');
+  };
+  const check = (id) => {
+    const { currentHouse } = state;
+    console.log(currentHouse.id, id);
+    console.log(currentHouse.id === id);
+    return currentHouse.id === id;
   };
 
   return (
@@ -90,7 +99,7 @@ const Reserve = () => {
             <select name="currentHouse" onChange={(e) => handleChange(e)}>
               {store.houses.map((reservation) => (
                 <option
-                  defaultValue={reservation.id === state.currentHouse.id}
+                  selected={check(reservation.id)}
                   key={reservation.id}
                   value={reservation.id}
                 >

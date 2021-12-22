@@ -5,12 +5,14 @@ import reservationApi, { deleteReservation } from '../api/reservations';
 
 const Myreservations = () => {
   const dispatch = useDispatch();
-  const { reservationsReducer } = useSelector((state) => state);
+  const { reservationsReducer, userReducer } = useSelector((state) => state);
   useEffect(() => {
-    reservationApi(dispatch, getReservations);
+    const { user_id: id } = userReducer.user;
+    reservationApi(dispatch, getReservations, id);
   }, []);
-  const handleDelete = (id) => {
-    deleteReservation(dispatch, removeReservation, id);
+  const handleDelete = (rerveId) => {
+    const { user_id: id } = userReducer.user;
+    deleteReservation(dispatch, removeReservation, id, rerveId);
   };
 
   return (
