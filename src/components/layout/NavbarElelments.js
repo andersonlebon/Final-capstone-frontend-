@@ -1,9 +1,21 @@
 import styled from 'styled-components';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaUserCircle } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 
 export const MobileIcon = styled.div`
   justify-self: end;
+`;
+
+export const UserIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
+export const UserCircle = styled(FaUserCircle)`
+  border-color: transparent;
+  color: grey;
+  font-size: 1rem;
 `;
 
 export const Bars = styled(FaBars)`

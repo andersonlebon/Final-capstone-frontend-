@@ -7,7 +7,7 @@ import logo from './logo.png';
 import style from './navbar.module.scss';
 import SocialIcons from './socialIcons';
 import {
-  Bars, NavLink, NavMenu, MobileIcon,
+  Bars, NavLink, NavMenu, MobileIcon, UserIcon, UserCircle,
 } from './NavbarElelments';
 
 const Navbar = ({ logo, toggle }) => (
@@ -17,6 +17,10 @@ const Navbar = ({ logo, toggle }) => (
         <Link to="/" className={style.logo_div}>
           <img src={logo} alt="logo" width={100} height={100} />
         </Link>
+        <UserIcon>
+          <UserCircle />
+          <span className={style.cur_user}>user</span>
+        </UserIcon>
         <MobileIcon onClick={toggle}>
           <Bars />
         </MobileIcon>
@@ -42,7 +46,6 @@ const Navbar = ({ logo, toggle }) => (
           <NavLink className={style.items} to="/reserve" activestyle>
             Reserve
           </NavLink>
-
         </NavMenu>
       </div>
     </div>
@@ -53,8 +56,7 @@ const Navbar = ({ logo, toggle }) => (
         {' '}
         <span>{new Date().getFullYear()}</span>
         {' '}
-        all
-        rights reserved
+        all rights reserved
       </p>
     </footer>
   </nav>
