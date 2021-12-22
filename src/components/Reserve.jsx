@@ -48,7 +48,17 @@ const Reserve = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state);
+    const {
+      duration, startDate, price, currentHouse,
+    } = state;
+    const newReservation = {
+      rent_duration: duration,
+      rent_start_date: startDate,
+      rent_total_price: price,
+      house_ids: currentHouse.id,
+
+    };
+    console.log(newReservation);
   };
 
   return (
@@ -99,9 +109,11 @@ const Reserve = (props) => {
             onChange={(date) => onChangeDate(date)}
           />
           {/* <Select options={reservations} /> */}
-          <button type="submit" className="btn btn-primary">
-            Add Reservation
-          </button>
+          <div className="btn">
+            <button type="submit" className="btn btn-primary">
+              Add Reservation
+            </button>
+          </div>
         </form>
       </div>
     </section>
