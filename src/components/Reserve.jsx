@@ -39,7 +39,6 @@ const Reserve = () => {
     const stateM = { ...state };
     stateM.startDate = date;
     setState({ ...stateM });
-    console.log(date.getDay());
   };
 
   const handleSubmit = (e) => {
@@ -54,7 +53,6 @@ const Reserve = () => {
       house_ids: currentHouse.id,
 
     };
-    console.log(newReservation);
     reservationApi(dispatch, addReservation, newReservation);
     history('/');
   };
@@ -84,7 +82,6 @@ const Reserve = () => {
           <div className="form-group">
             <input
               type="text"
-              className="form-control"
               onChange={(e) => handleChange(e)}
               name="duration"
               placeholder="Duration"
@@ -93,7 +90,6 @@ const Reserve = () => {
           <div className="form-group">
             <input
               type="number"
-              className="form-control"
               onChange={(e) => handleChange(e)}
               name="price"
               placeholder="Price"
