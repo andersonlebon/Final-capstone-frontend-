@@ -8,3 +8,43 @@
   grid-template-columns: 15% 85%;
   height: 100vh;
 }
+
+.auth {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 8px #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+}
+
+.btn {
+  background-color: #15a008;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.link {
+  color: rgb(9, 95, 209);
+  text-decoration: none;
+}

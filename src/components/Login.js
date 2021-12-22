@@ -20,14 +20,16 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="auth">
+      <form onSubmit={handleSubmit} className="login-form">
         <h2>Login</h2>
-        <span>Username</span>
-        <input type="text" onChange={(e) => setUsername(e.target.value)} />
-        <input type="submit" value="Log In" />
+        <input type="text" onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
+        <input type="submit" value="LOG IN" className="btn" />
+        <span>
+          Dont have account?
+          <Link to="/signup" className="link"> SignUp </Link>
+        </span>
       </form>
-      <Link to="/signup"> SignUp </Link>
     </div>
   );
 };
