@@ -5,8 +5,9 @@ const resevationsBasedURL = 'api/v1/users/5/reservations';
 const resevationsApi = async (dispatch, action, newData = null) => {
   try {
     if (newData != null) {
-      await baseApi.post(`${resevationsBasedURL}`, newData);
-      dispatch(action(newData));
+      const { data } = await baseApi.post(`${resevationsBasedURL}`, newData);
+      console.log(data);
+      dispatch(action(data));
     }
 
     if (!newData) {
@@ -14,8 +15,9 @@ const resevationsApi = async (dispatch, action, newData = null) => {
       dispatch(action(data));
     }
     // send delete request
-  } catch ({ message }) {
-    dispatch({ type: `${action.type}Fail`, payload: { error: message } });
+  } catch (e) {
+    console.log(e);
+    dispatch({ type: `${action.type}Fail`, payload: { error: e.message } });
   }
 };
 

@@ -10,6 +10,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 // import CustomSelect from 'custom-select-menu/custom-select';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchHouses } from '../store/action/houseActions';
+import { addReservation } from '../store/reducers/myReservations/index';
+import reservationApi from '../api/reservations';
 
 const Reserve = (props) => {
   const store = useSelector((state) => state);
@@ -49,16 +51,17 @@ const Reserve = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const {
-      duration, startDate, price, currentHouse,
+      duration, price, currentHouse,
     } = state;
     const newReservation = {
       rent_duration: duration,
-      rent_start_date: startDate,
+      rent_start_date: '2020-04-01',
       rent_total_price: price,
       house_ids: currentHouse.id,
 
     };
     console.log(newReservation);
+    reservationApi(dispatch, addReservation, newReservation);
   };
 
   return (
@@ -72,9 +75,7 @@ const Reserve = (props) => {
           BOOK YOUR
           {` ${state.currentHouse.title}`}
         </h2>
-        <p className="description">
-          {state.currentHouse.house_description}
-        </p>
+        <p className="description">{state.currentHouse.house_description}</p>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="form-group">
             <select name="currentHouse" onChange={(e) => handleChange(e)}>

@@ -10,7 +10,7 @@ const reservationsReducer = createSlice({
       return [...action.payload];
     },
     addReservation(state, action) {
-      state.reservations.push(action.payload);
+      state.push(action.payload);
     },
     removeReservation(state, action) {
       state.reservations = state.reservations.filter(
