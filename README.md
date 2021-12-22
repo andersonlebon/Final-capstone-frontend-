@@ -4,7 +4,7 @@
 
 > In this task, we used the live data from the [Final-Capstone-Back-End Project](https://github.com/andersonlebon/Final-Capstone-backend).
 
-The objective is to build a house booking application(with discount) where the user will have the posibilities to add, reserve and delete houses with added advantage to view house details.The application has authentication whereby the user logged in can only delete the houses that he added.
+The objective was to build a house booking application(with discount) where the user has the posibilities to add, reserve and delete houses with added advantage to view house details.The application has authentication whereby the logged in user can only delete the houses that he/she added.
 
 ## Screenshots
 
@@ -27,7 +27,7 @@ The objective is to build a house booking application(with discount) where the u
 ## Built With
 - React-Redux
 - HTML/SCSS
-- Final-capstone-Back-End API
+- [Final-capstone-Back-End API](https://house-booking-api.herokuapp.com/api-docs/index.html)
 
 ## Live Demo
 
@@ -47,7 +47,6 @@ To run code locally, please follow steps belove
 
 1. `git@github.com:andersonlebon/Final-capstone-frontend-.git`
 2. run `npm install`
-3. then run `npm run start`
 
 ### Usage
 
@@ -55,13 +54,14 @@ To run code locally, please follow steps belove
 
 ### Run tests
 
-To test for add and remove a task, you need to install Jest or run `npm install'
-`npm run test`
+To test for add and remove a task, you need to install Jest or run `npm install'.
+
+To test, run `npm run test`
 
 ### Linters Verification
 
-`npx eslint .`
-`npx stylelint "**/*.{css,scss}"`
+- `npx eslint .`
+- `npx stylelint "**/*.{css,scss}"`
 
 ## Authors
 
