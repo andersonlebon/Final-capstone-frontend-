@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Carousel from './Carousel/Carousel';
 import { fetchHouses } from '../../store/action/houseActions';
 import style from './Houses.module.scss';
 
 const Houses = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem('token') === null) { navigate('/login'); }
+  }, []);
   const houses = useSelector((state) => state.housesReducer.houses);
   const dispatch = useDispatch();
 
