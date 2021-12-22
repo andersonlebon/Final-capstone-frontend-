@@ -14,6 +14,8 @@
   "ignoreFiles": [
     "build/**",
     "dist/**",
+    "**/sass/main.css",
+    "src/components/**",
     "**/reset*.css",
     "**/bootstrap*.css",
     "**/*.js",

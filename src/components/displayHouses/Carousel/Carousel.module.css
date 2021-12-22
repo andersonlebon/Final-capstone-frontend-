@@ -10,8 +10,8 @@
   display: flex;
   gap: 15px;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-top: 10px;
 }
 
@@ -29,21 +29,23 @@
     margin-top: 3%;
     padding: 20px 0;
   }
+
   .info_icons {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     gap: 15px;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     margin-top: 10px;
   }
+
   .info_icons .icon_btn {
     border: 1px solid grey;
   }
+
   a {
     text-decoration: none;
   }
 }
-/*# sourceMappingURL=Carousel.module.css.map */

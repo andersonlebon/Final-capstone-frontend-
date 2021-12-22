@@ -6,15 +6,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   color: #fff;
 }
 
@@ -39,29 +39,31 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   row-gap: 20px;
   width: 88%;
 }
 
-.reservation form select, .reservation form input {
+.reservation form select,
+.reservation form input {
   color: #fff;
   width: 100%;
   padding: 12px;
   border-radius: 50px;
   outline: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 1px solid wheat;
   background-color: transparent;
 }
 
-.reservation form select option, .reservation form input option {
+.reservation form select option,
+.reservation form input option {
   color: black;
   width: 50%;
 }
@@ -69,8 +71,8 @@
 .reservation form button {
   width: auto;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   padding: 14px;
   border-radius: 50px;
   border: 1px solid wheat;
@@ -88,15 +90,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   left: 0;
   width: 93%;
   height: 80%;
@@ -131,7 +133,8 @@
   background-color: #b0b895 !important;
 }
 
-.react-datepicker .react-datepicker__navigation, .react-datepicker .react-datepicker__navigation--next {
+.react-datepicker .react-datepicker__navigation,
+.react-datepicker .react-datepicker__navigation--next {
   right: 0;
   background: black !important;
   color: blue !important;
@@ -141,15 +144,18 @@
   .reservation .form-bg {
     width: 50%;
   }
+
   .reservation .form-bg form {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
-  .reservation .form-bg form .form-group, .reservation .form-bg form .react-datepicker-wrapper {
+
+  .reservation .form-bg form .form-group,
+  .reservation .form-bg form .react-datepicker-wrapper {
     width: 45%;
     margin: 0 15px;
   }
@@ -157,8 +163,8 @@
 
 .reserved-card {
   border: 1px solid #3644073d;
-  -webkit-box-shadow: 0px 0px 7px rgba(153, 153, 153, 0.644);
-          box-shadow: 0px 0px 7px rgba(153, 153, 153, 0.644);
+  -webkit-box-shadow: 0 0 7px rgba(153, 153, 153, 0.644);
+  box-shadow: 0 0 7px rgba(153, 153, 153, 0.644);
   font-size: 14px;
   width: 290px;
   height: auto;
@@ -167,14 +173,14 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-radius: 10px;
 }
 
@@ -193,8 +199,8 @@
   margin: 10px 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr) [2];
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .reservation-info ul span {
@@ -234,10 +240,10 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 40px;
   padding: 50px 10px;
 }
@@ -252,4 +258,3 @@
   text-align: center;
   padding-top: 20px;
 }
-/*# sourceMappingURL=main.css.map */

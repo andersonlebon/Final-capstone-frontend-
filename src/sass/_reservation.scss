@@ -1,251 +1,264 @@
 $primary-color: #00a8ff;
 $secondary-color: #fff;
 
-.reservation {
-    // center the reservation the content with flexbox
-    position: relative;
+.reservation-info {
+  width: 100%;
+  padding: 10px;
+
+  ul {
+    margin: 10px 0;
+
+    span {
+      font-weight: bold;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    li:nth-child(even) {
+      text-align: right;
+    }
+  }
+
+  button {
     width: 100%;
-    height: 100vh;
+    margin: 10px 0;
+    padding: 6px 0;
+    background-color: rgb(223, 3, 3);
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.reservation {
+  // center the reservation the content with flexbox
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  // set the background color
+  color: $secondary-color;
+
+  h2 {
+    z-index: 10;
+    width: 95%;
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid $secondary-color;
+    text-transform: uppercase;
+  }
+
+  p {
+    width: 90%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  form {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    // set the background color
-    color: $secondary-color;
-    h2 {
-        z-index: 10;
-        width: 95%;
-        text-align: center;
-        padding: 30px 0;
-        border-bottom: 1px solid $secondary-color;
-        text-transform: uppercase;
+    justify-content: center;
+    row-gap: 20px;
+    width: 88%;
+
+    select,
+    input {
+      color: $secondary-color;
+
+      option {
+        color: black;
+        width: 50%;
+      }
+
+      width: 100%;
+      padding: 10px;
+      border-radius: 50px;
+      outline: none;
+      appearance: none;
+      border: 1px solid wheat;
+      background-color: #96bf0f62;
+
+      &::placeholder {
+        color: rgb(58, 58, 58);
+      }
     }
 
-    p {
-        width: 90%;
-        text-align: center;
-        padding: 20px 0;
+    .btn {
+      grid-column: 1/3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        margin: 0 auto;
+        align-self: center;
+        padding: 14px 20px;
+        border-radius: 50px;
+        border: 1px solid #96bf0f6c;
+        background-color: #fff;
+        font-weight: bold;
+        color: #97bf0f;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #96bf0f62;
+          transition: all 0.3s ease-in-out;
+          color: #fff;
+        }
+      }
     }
+  }
 
-    form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        row-gap: 20px;
-        width: 88%;
-
-        select, input {
-            color: $secondary-color;
-
-            option {
-                color: black;
-                width: 50%;
-            }
-            width: 100%;
-            padding: 10px;
-            border-radius: 50px;
-            outline: none;
-            appearance: none;
-            border: 1px solid wheat;
-            background-color: #96bf0f62;
-            &::placeholder {
-                color: rgb(58, 58, 58);
-            }
-         }
-         .btn {
-             grid-column: 1/3;
-             display: flex;
-             justify-content: center;
-            align-items: center;
-             button {
-                 margin: 0 auto;
-                 align-self: center;
-                 padding: 14px 20px;
-                 border-radius: 50px;
-                 border: 1px solid #96bf0f6c;
-                 background-color: #fff;
-                 font-weight: bold;
-                 color: #97bf0f;;
-    
-                 &:hover {
-                    cursor: pointer;
-                    background-color: #96bf0f62;
-                    transition: all 0.3s ease-in-out;
-                    color: #fff;
-                 }
-             }
-
-         }
-
-    }
-
-    .form-bg {
-        z-index: 10;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        left: 0;
-        width: 93%;
-        height: 80%;
-        background-color: #81a30f80;
-        border-radius: 10px;
-    }
-
+  .form-bg {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    left: 0;
+    width: 93%;
+    height: 80%;
+    background-color: #81a30f80;
+    border-radius: 10px;
+  }
 }
 
 .image-bg {
+  position: absolute;
+  // background-color: #96bf0f11;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .img {
     position: absolute;
-    // background-color: #96bf0f11;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
-    img {
-        height: 100%;
-        width: 100%;
-    }
-
-    .img {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background-color: #364407;
-        opacity: 0.8;
-    }
+    background-color: #364407;
+    opacity: 0.8;
+  }
 }
 
 .react-datepicker {
-    background-color: #b0b895 !important;
-    // .react-datepicker__current-month, .react-datepicker__day-name {
-    //      color: $secondary-color !important;
-    // }
+  background-color: #b0b895 !important;
+  // .react-datepicker__current-month, .react-datepicker__day-name {
+  //      color: $secondary-color !important;
+  // }
 
-    .react-datepicker__navigation, .react-datepicker__navigation--next {
-        right: 0;
-        background: black !important;
-        color: blue !important;
-    }
+  .react-datepicker__navigation,
+  .react-datepicker__navigation--next {
+    right: 0;
+    background: black !important;
+    color: blue !important;
+  }
 }
 
 @media (min-width: 768px) {
-    .reservation {
+  .reservation {
+    .form-bg {
+      width: 50%;
 
-        .form-bg {
-            width: 50%;
-            form  {
-                display: grid ;
-                column-gap: 20px;
-                grid-template-columns: repeat(2, 1fr);
-                 
-                .react-datepicker {
-                    transform: scale(0.8) translateY(-30px);
-                }
-            }
-        }
-    }
-}
-
-.reserved-card {
-    border: 1px solid #3644073d;
-    // small shadow
-    box-shadow: 0px 0px 7px rgba(153, 153, 153, 0.644);
-    font-size: 14px;
-    width: 290px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-
-    h3 {
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-    &:hover {
-        cursor: pointer;
-        transition: all 0.5s ease-in-out;
-        transform: scale(1.018);
-        .reserved-img-color {
-            transition: all 0.5s ease-in-out;
-            opacity: 0;
-        }
-    }
-}
-
-.reservation-info {
-    width: 100%;
-    padding: 10px;
-
-    ul {
-        margin: 10px 0;
-        span{
-            font-weight: bold;
-        }
+      form {
         display: grid;
+        column-gap: 20px;
         grid-template-columns: repeat(2, 1fr);
-        li:nth-child(even) {
-            text-align: right;
-        }
-    }
 
-    button {
-        width: 100%;
-        margin: 10px 0;
-        padding: 6px 0;
-        background-color: rgb(223, 3, 3);
-        border: none;
-        border-radius: 3px;
-        color: #fff;
-        font-weight: bold;
-        &:hover {
-            cursor: pointer;
+        .react-datepicker {
+          transform: scale(0.8) translateY(-30px);
         }
+      }
     }
+  }
 }
 
 .reserved-img {
-    width: 100%;
-    height: 160px;
-    position: relative;
+  width: 100%;
+  height: 160px;
+  position: relative;
+  z-index: 1;
+
+  img {
+    border-radius: 10px 10px 0 0;
     z-index: 1;
-    img {
-        border-radius: 10px 10px 0 0;
-        z-index: 1;
-    }
+  }
+
+  .reserved-img-color {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #97bf0f;
+    border-radius: 10px 10px 0 0;
+    z-index: 10;
+    opacity: 0.7;
+  }
+}
+
+.reserved-card {
+  border: 1px solid #3644073d;
+  // small shadow
+  box-shadow: 0 0 7px rgba(153, 153, 153, 0.644);
+  font-size: 14px;
+  width: 290px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.018);
+
     .reserved-img-color {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        background-color: #97bf0f;
-        border-radius: 10px 10px 0 0;
-        z-index: 10;
-        opacity: 0.7;
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
     }
+  }
 }
 
 .allReserved {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 50px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 10px;
 }
 
 .my-reservation-container {
-    height: 100vh;
-    overflow-y: scroll;
-    background-color: rgba(221, 221, 221, 0.274);
-        h2 {
-        font-size: 2.2rem;
-        font-weight: bold;
-        text-align: center;
-        padding-top: 30px;
-    }
-    
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(221, 221, 221, 0.274);
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+  }
 }

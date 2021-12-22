@@ -4,11 +4,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .main_container .main_header {
@@ -17,12 +17,12 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .main_container .main_header h1 {
@@ -59,23 +59,25 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
+
   .main_container .main_header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     margin-top: 6rem;
     width: 100%;
   }
+
   .main_container .main_header h1 {
     color: black;
     font-size: 1.5rem;
@@ -84,9 +86,10 @@
     line-height: 4px;
     text-align: center;
     -ms-flex-item-align: end;
-        align-self: flex-end;
+    align-self: flex-end;
     padding-right: 5rem;
   }
+
   .main_container .main_header p {
     color: grey;
     padding-top: 1rem;
@@ -95,9 +98,10 @@
     text-align: center;
     text-transform: capitalize;
     -ms-flex-item-align: end;
-        align-self: flex-end;
+    align-self: flex-end;
     padding-right: 5rem;
   }
+
   .main_container .divider_home {
     max-width: 10%;
     border-bottom: 4px dotted grey;
@@ -112,4 +116,3 @@
     margin-left: 75%;
   }
 }
-/*# sourceMappingURL=Houses.module.css.map */
