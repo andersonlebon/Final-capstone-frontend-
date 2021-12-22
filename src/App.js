@@ -21,12 +21,13 @@ function App() {
 
   return (
     <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+      {user && (
       <section className="container">
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-        {user && <Navigation />}
+        <Navigation />
         <article className="main">
           <Routes>
             <Route path="/" element={<Houses />} />
@@ -38,6 +39,7 @@ function App() {
           </Routes>
         </article>
       </section>
+      )}
     </Router>
   );
 }

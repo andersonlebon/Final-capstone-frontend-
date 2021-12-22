@@ -16,7 +16,8 @@ const Navbar = ({ logo, toggle }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleLogout = () => {
+  const handleLogout = (e) => {
+    e.preventDefault();
     dispatch(logoutUser());
     navigate('/login');
   };
@@ -53,11 +54,12 @@ const Navbar = ({ logo, toggle }) => {
             <NavLink className={style.items} to="/reserve" activeStyle>
               Reserve
             </NavLink>
+
+            <NavLink className={style.items} to="/login" onClick={handleLogout} activeStyle>
+              Logout
+            </NavLink>
           </NavMenu>
         </div>
-        <button type="button" onClick={handleLogout}>
-          Log Out
-        </button>
       </div>
       <footer className={style.footer}>
         <SocialIcons />

@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+/* .main {
+  height: 100vh;
+} */
+
 .container {
   display: grid;
   grid-template-rows: 15% 85%;
@@ -13,15 +17,15 @@
 
 .authenticate {
   width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 }
 
 .login-form {
   border: 1px solid #ccc;
-  padding: 1rem;
+  padding: 1rem 4rem;
   border-radius: 5px;
   box-shadow: 0 0 8px #ccc;
   display: flex;

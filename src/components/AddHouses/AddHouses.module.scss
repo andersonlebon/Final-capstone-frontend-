@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   margin: 2rem auto;
   background-image: url('https://media.istockphoto.com/photos/modern-house-and-backyard-picture-id109350295?b=1&k=20&m=109350295&s=170667a&w=0&h=sPhaB428eZLl-VzGhoL7oGPtL-SxGBFWlTCQkXHenJ4=');
   background-position: center;
@@ -11,6 +11,7 @@
   color: #fff;
   display: flex;
   align-items: center;
+  margin: 0;
 
   .add_form {
     display: flex;
@@ -20,7 +21,7 @@
     box-shadow: 0 0 8px #fff;
     padding: 1rem;
     flex: 0 1 500px;
-    margin: 0 auto;
+    margin: 1rem auto;
 
     .form_head {
       text-align: center;
@@ -30,10 +31,10 @@
 
     input,
     textarea {
-      margin: 1rem 0;
+      margin: 0.5rem 0;
       padding: 0.5rem 1rem;
       font-size: 1rem;
-      background-color: #b4df09;
+      background-color: #a2c908;
       color: #fff;
       border-radius: 20px;
       border: 1px solid #fff;
@@ -80,3 +81,5 @@
     }
   }
 }
+
+
