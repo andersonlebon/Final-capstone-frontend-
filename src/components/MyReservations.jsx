@@ -7,7 +7,7 @@ const Myreservations = () => {
   const dispatch = useDispatch();
   const { reservationsReducer } = useSelector((state) => state);
   useEffect(() => {
-    dispatch(reservationApi, getReservations);
+    reservationApi(dispatch, getReservations);
   }, []);
   const handleDelete = (id) => {
     deleteReservation(dispatch, removeReservation, id);
