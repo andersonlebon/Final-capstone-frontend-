@@ -1,6 +1,6 @@
 import baseApi from '../store/baseApi';
 
-const resevationsBasedURL = 'api/v1/users/5/reservations';
+const resevationsBasedURL = 'api/v1/users/1/reservations';
 
 const resevationsApi = async (dispatch, action, newData = null) => {
   try {
