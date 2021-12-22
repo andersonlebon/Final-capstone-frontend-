@@ -25,21 +25,21 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
-      {user && (
-      <section className="container">
-        <Navigation />
-        <article className="main">
-          <Routes>
-            <Route path="/" element={<Houses />} />
-            <Route path="/showHouse/:houseTitle" element={<ShowHouse />} />
-            <Route path="/myreservations" element={<MyReservations />} />
-            <Route path="/addhouse" element={<AddHouses />} />
-            <Route path="/removehouse" element={<RemoveHouses />} />
-            <Route path="/reserve" element={<Reserve />} />
-          </Routes>
-        </article>
-      </section>
-      )}
+      {user ? (
+        <section className="container">
+          <Navigation />
+          <article className="main">
+            <Routes>
+              <Route path="/" element={<Houses />} />
+              <Route path="/showHouse/:houseTitle" element={<ShowHouse />} />
+              <Route path="/myreservations" element={<MyReservations />} />
+              <Route path="/addhouse" element={<AddHouses />} />
+              <Route path="/removehouse" element={<RemoveHouses />} />
+              <Route path="/reserve" element={<Reserve />} />
+            </Routes>
+          </article>
+        </section>
+      ) : <Login />}
     </Router>
   );
 }
