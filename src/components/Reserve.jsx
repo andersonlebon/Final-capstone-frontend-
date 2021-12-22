@@ -9,6 +9,8 @@ import { fetchHouses } from '../store/action/houseActions';
 import { addReservation } from '../store/reducers/myReservations/index';
 import reservationApi from '../api/reservations';
 
+const defaultImage = 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=875&q=80';
+
 const Reserve = () => {
   const { housesReducer: store } = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -25,8 +27,6 @@ const Reserve = () => {
 
   useEffect(() => {
     dispatch(fetchHouses());
-    console.log(store);
-    console.log(houseId);
     if (houseId !== 'new') {
       const stateM = { ...state };
       const selectedHouse = store.houses.find(
@@ -73,20 +73,27 @@ const Reserve = () => {
   return (
     <section className="reservation">
       <div className="image-bg">
-        <img src={state.currentHouse.image} alt={state.currentHouse.title} />
+        <img
+          src={state.currentHouse.image || defaultImage}
+          alt={state.currentHouse.title}
+        />
         <div className="img" />
       </div>
       <div className="form-bg">
         <h2>
           BOOK YOUR
-          {` ${state.currentHouse.title}`}
+          {` ${state.currentHouse.title || 'HOUSE'}`}
         </h2>
         <p className="description">{state.currentHouse.house_description}</p>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="form-group">
             <select name="currentHouse" onChange={(e) => handleChange(e)}>
               {store.houses.map((reservation) => (
-                <option selected={reservation.id === state.currentHouse.id} key={reservation.id} value={reservation.id}>
+                <option
+                  defaultValue={reservation.id === state.currentHouse.id}
+                  key={reservation.id}
+                  value={reservation.id}
+                >
                   {reservation.title}
                 </option>
               ))}
