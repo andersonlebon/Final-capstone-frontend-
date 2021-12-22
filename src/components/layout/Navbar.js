@@ -1,20 +1,18 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-undef */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import SocialIcons from './socialIcons';
 import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Pinterest,
-  Telegram,
-  Whatsapp,
-} from 'react-bootstrap-icons';
+  Bars, NavLink, NavMenu, MobileIcon,
+} from './NavbarElelments';
 import logo from './logo.png';
-import style from './navbar.module.css';
+import style from './navbar.module.scss';
 import { logoutUser } from '../../store/reducers/users';
 
-const Navbar = ({ logo }) => {
+const Navbar = ({ logo, toggle }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -25,69 +23,51 @@ const Navbar = ({ logo }) => {
 
   return (
     <nav className={style.navbar}>
-      <h1 className={style.head}>
-        <img src={logo} alt="logo" width={100} height={100} />
-      </h1>
-      <ul className={style.navlist}>
-        <li className={style.listitems}>
-          <Link className={style.items} to="/">
-            Houses
+      <div className={style.nav_head}>
+        <h1 className={style.head}>
+          <Link to="/" className={style.logo_div}>
+            <img src={logo} alt="logo" width={100} height={100} />
           </Link>
-        </li>
-        <li className={style.listitems}>
-          <Link className={style.items} to="/myreservations">
-            My Reservations
-          </Link>
-        </li>
-        <li className={style.listitems}>
-          <Link className={style.items} to="/addhouse">
-            Add House
-          </Link>
-        </li>
-        <li className={style.listitems}>
-          <Link className={style.items} to="/removehouse">
-            Remove House
-          </Link>
-        </li>
-        <li className={style.listitems}>
-          <Link className={style.items} to="/reserve">
-            Reserve
-          </Link>
-        </li>
-        <li className={style.listitems}>
-          <button type="button" onClick={handleLogout}>
-            Log Out
-          </button>
-        </li>
-      </ul>
-      <footer className={style.footer}>
-        <div className={style.social_icons}>
-          <div className={style.icon_div}>
-            <Facebook className={style.icon} />
-          </div>
-          <div className={style.icon_div}>
-            <Twitter className={style.icon} />
-          </div>
-          <div className={style.icon_div}>
-            <Instagram className={style.icon} />
-          </div>
-          <div className={style.icon_div}>
-            <Pinterest className={style.icon} />
-          </div>
-          <div className={style.icon_div}>
-            <Telegram className={style.icon} />
-          </div>
-          <div className={style.icon_div}>
-            <Whatsapp className={style.icon} />
-          </div>
+          <MobileIcon onClick={toggle}>
+            <Bars />
+          </MobileIcon>
+        </h1>
+        <div className={style.nav_body}>
+          <NavMenu className={style.navlist}>
+            <NavLink className={style.items} to="/" activeStyle>
+              Houses
+            </NavLink>
+
+            <NavLink className={style.items} to="/myreservations" activeStyle>
+              Reservations
+            </NavLink>
+
+            <NavLink className={style.items} to="/addhouse" activeStyle>
+              Add House
+            </NavLink>
+
+            <NavLink className={style.items} to="/removehouse" activeStyle>
+              Remove House
+            </NavLink>
+
+            <NavLink className={style.items} to="/reserve" activeStyle>
+              Reserve
+            </NavLink>
+          </NavMenu>
         </div>
+        <button type="button" onClick={handleLogout}>
+          Log Out
+        </button>
+      </div>
+      <footer className={style.footer}>
+        <SocialIcons />
         <p>
           &copy;
           {' '}
           <span>{new Date().getFullYear()}</span>
           {' '}
-          House Booking all rights
-          reserved
+          all
+          rights reserved
         </p>
       </footer>
     </nav>

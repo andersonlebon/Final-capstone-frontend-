@@ -1,0 +1,82 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  margin: 2rem auto;
+  background-image: url('https://media.istockphoto.com/photos/modern-house-and-backyard-picture-id109350295?b=1&k=20&m=109350295&s=170667a&w=0&h=sPhaB428eZLl-VzGhoL7oGPtL-SxGBFWlTCQkXHenJ4=');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #aed60b;
+  background-blend-mode: multiply;
+  color: #fff;
+  display: flex;
+  align-items: center;
+
+  .add_form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #fff;
+    padding: 1rem;
+    flex: 0 1 500px;
+    margin: 0 auto;
+
+    .form_head {
+      text-align: center;
+      font-size: 1.3rem;
+      margin: 1.5rem 0;
+    }
+
+    input,
+    textarea {
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #b4df09;
+      color: #fff;
+      border-radius: 20px;
+      border: 1px solid #fff;
+      outline: none;
+    }
+
+    textarea {
+      height: 5rem;
+      border-radius: 5px;
+    }
+
+    ::placeholder {
+      color: #fff;
+      font-size: 0.8rem;
+    }
+
+    input[type=file]::file-selector-button {
+      border: 1px solid #96b70e;
+      padding: 0.2em 0.4em;
+      border-radius: 15px;
+      background-color: #fdfdfc;
+      transition: 1s;
+      cursor: pointer;
+    }
+
+    input[type=file]::file-selector-button:hover {
+      background-color: #b4df09;
+    }
+
+    .btn_primary {
+      padding: 0.5rem 2.5rem;
+      border-radius: 3px;
+      background-color: #96b70e;
+      color: #fafafa;
+      cursor: pointer;
+      margin: 1rem 0.5rem;
+      margin-top: auto;
+      align-self: flex-end;
+      border: 1px solid #fff;
+    }
+
+    .btn_primary:hover {
+      opacity: 0.8;
+    }
+  }
+}
