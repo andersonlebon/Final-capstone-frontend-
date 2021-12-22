@@ -1,21 +1,14 @@
-/* eslint-disable eqeqeq */
-/* eslint-disable max-len */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-// import Select from 'react-select';
-// import CustomSelect from 'custom-select-menu/custom-select';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchHouses } from '../store/action/houseActions';
 import { addReservation } from '../store/reducers/myReservations/index';
 import reservationApi from '../api/reservations';
 
-const Reserve = (props) => {
-  const store = useSelector((state) => state);
+const Reserve = () => {
+  const { housesReducer: store } = useSelector((state) => state);
   const dispatch = useDispatch();
   const history = useNavigate();
   const [state, setState] = useState({
@@ -33,8 +26,7 @@ const Reserve = (props) => {
   const handleChange = ({ target: input }) => {
     const stateM = { ...state };
     if (input.name === 'currentHouse') {
-      const { store } = props;
-      const selectedHouse = store.housesReducer.houses.find((house) => house.id == input.value);
+      const selectedHouse = store.houses.find((house) => house.id === parseInt(input.value, 10));
       stateM[input.name] = selectedHouse;
       console.log(selectedHouse);
     } else {
@@ -82,7 +74,7 @@ const Reserve = (props) => {
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="form-group">
             <select name="currentHouse" onChange={(e) => handleChange(e)}>
-              {store.housesReducer.houses.map((reservation) => (
+              {store.houses.map((reservation) => (
                 <option key={reservation.id} value={reservation.id}>
                   {reservation.title}
                 </option>
@@ -112,7 +104,6 @@ const Reserve = (props) => {
             selected={state.startDate}
             onChange={(date) => onChangeDate(date)}
           />
-          {/* <Select options={reservations} /> */}
           <div className="btn">
             <button type="submit" className="btn btn-primary">
               Add Reservation
