@@ -20,13 +20,13 @@ const Login = () => {
   }
 
   return (
-    <div className="auth">
+    <div className="authenticate">
       <form onSubmit={handleSubmit} className="login-form">
         <h2>Login</h2>
         <input type="text" onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
         <input type="submit" value="LOG IN" className="btn" />
-        <span>
-          Dont have account?
+        <span className="navigate">
+          Don&rsquo;t have an account?
           <Link to="/signup" className="link"> SignUp </Link>
         </span>
       </form>
