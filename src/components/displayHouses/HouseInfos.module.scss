@@ -30,12 +30,15 @@
   .description_div {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    
 
     h2 {
       color: grey;
       font-size: 1rem;
       font-family: 'Lato', sans-serif;
       font-weight: 400;
+      
     }
   }
 }

@@ -23,23 +23,23 @@ const Navbar = ({ logo, toggle }) => (
       </h1>
       <div className={style.nav_body}>
         <NavMenu className={style.navlist}>
-          <NavLink className={style.items} to="/" activeStyle>
+          <NavLink className={style.items} to="/" activestyle>
             Houses
           </NavLink>
 
-          <NavLink className={style.items} to="/myreservations" activeStyle>
+          <NavLink className={style.items} to="/myreservations" activestyle>
             Reservations
           </NavLink>
 
-          <NavLink className={style.items} to="/addhouse" activeStyle>
+          <NavLink className={style.items} to="/addhouse" activestyle>
             Add House
           </NavLink>
 
-          <NavLink className={style.items} to="/removehouse" activeStyle>
+          <NavLink className={style.items} to="/removehouse" activestyle>
             Remove House
           </NavLink>
 
-          <NavLink className={style.items} to="/reserve" activeStyle>
+          <NavLink className={style.items} to="/reserve" activestyle>
             Reserve
           </NavLink>
 

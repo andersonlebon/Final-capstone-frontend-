@@ -48,7 +48,7 @@ const ShowHouse = () => {
             <h1>{displayHouse.title}</h1>
             <p>
               {displayHouse.discount}
-              % available for longer stay
+              % discount available for this choice
             </p>
           </div>
           <div className={style.show_finance}>
