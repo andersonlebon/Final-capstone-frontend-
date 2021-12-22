@@ -1,8 +1,10 @@
+/* eslint-disable max-len */
+/* eslint-disable radix */
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { fetchHouses } from '../store/action/houseActions';
 import { addReservation } from '../store/reducers/myReservations/index';
 import reservationApi from '../api/reservations';
@@ -11,6 +13,8 @@ const Reserve = () => {
   const { housesReducer: store } = useSelector((state) => state);
   const dispatch = useDispatch();
   const history = useNavigate();
+  const { houseId } = useParams();
+
   const [state, setState] = useState({
     selectedOption: null,
     currentHouse: {},
@@ -21,6 +25,16 @@ const Reserve = () => {
 
   useEffect(() => {
     dispatch(fetchHouses());
+    console.log(store);
+    console.log(houseId);
+    if (houseId !== 'new') {
+      const stateM = { ...state };
+      const selectedHouse = store.houses.find(
+        (house) => house.id === parseInt(houseId),
+      );
+      stateM.currentHouse = selectedHouse;
+      setState({ ...stateM });
+    }
   }, []);
 
   const handleChange = ({ target: input }) => {
@@ -72,7 +86,7 @@ const Reserve = () => {
           <div className="form-group">
             <select name="currentHouse" onChange={(e) => handleChange(e)}>
               {store.houses.map((reservation) => (
-                <option key={reservation.id} value={reservation.id}>
+                <option selected={reservation.id === state.currentHouse.id} key={reservation.id} value={reservation.id}>
                   {reservation.title}
                 </option>
               ))}

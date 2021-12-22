@@ -36,7 +36,7 @@ function App() {
             <Route path="/myreservations" element={<MyReservations />} />
             <Route path="/addhouse" element={<AddHouses />} />
             <Route path="/removehouse" element={<RemoveHouses />} />
-            <Route path="/reserve" element={<Reserve store={store} />} />
+            <Route path="/reserve/:houseId" element={<Reserve store={store} />} />
           </Routes>
         </article>
       </section>

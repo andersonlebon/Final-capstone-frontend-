@@ -103,7 +103,7 @@ const ShowHouse = () => {
           </div>
           <Link
             to={{
-              pathname: `/new_reservation/${displayHouse.id}`,
+              pathname: `/reserve/${displayHouse.id}`,
             }}
             data={displayHouse}
             className={style.btn_container}

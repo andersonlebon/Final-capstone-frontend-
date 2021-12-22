@@ -39,7 +39,7 @@ const Navbar = ({ logo, toggle }) => (
             Remove House
           </NavLink>
 
-          <NavLink className={style.items} to="/reserve" activeStyle>
+          <NavLink className={style.items} to="/reserve/new" activeStyle>
             Reserve
           </NavLink>
 
