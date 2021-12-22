@@ -2,8 +2,8 @@
 /* eslint-disable no-trailing-spaces */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReservations } from '../store/reducers/myReservations';
-import reservationApi from '../api/reservations';
+import { getReservations, removeReservation } from '../store/reducers/myReservations';
+import reservationApi, { deleteReservation } from '../api/reservations';
 
 const Myreservations = () => {
   // render the store in table
@@ -12,6 +12,11 @@ const Myreservations = () => {
   useEffect(() => {
     dispatch(reservationApi, getReservations);
   }, []);
+  const handleDelete = (id) => {
+    console.log(id);
+    deleteReservation(dispatch, removeReservation, id);
+  };
+
   return (
     <section className="my-reservation-container">
       <h2>My Reservations</h2>
@@ -41,10 +46,12 @@ const Myreservations = () => {
                 <li>
                   <span>Total price: </span>
                   {reservation.rent_duration
-                      * parseInt(reservation.house.price, 10)}
+                    * parseInt(reservation.house.price, 10)}
                 </li>
               </ul>
-              <button type="button">Cancel Reservation </button>
+              <button type="button" onClick={() => handleDelete(reservation.id)}>
+                Cancel Reservation
+              </button>
             </div>
           </li>
         ))}
