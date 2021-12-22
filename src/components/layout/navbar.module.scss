@@ -10,6 +10,7 @@ ul {
   width: 5rem;
   height: 4rem;
   cursor: pointer;
+  padding-left: 5px;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -33,6 +34,18 @@ img {
   padding: 1rem;
   display: grid;
   align-items: center;
+  
+
+  .nav_head {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: -0.089%;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+    box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+  }
 
   .head {
     display: grid;
@@ -70,6 +83,10 @@ img {
       flex-direction: column;
       gap: 2rem;
       width: 100%;
+      position: relative;
+      z-index: 0;
+      background-color: none;
+      box-shadow: none;
 
       .head {
         width: 100%;
