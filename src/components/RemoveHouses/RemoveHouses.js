@@ -5,11 +5,11 @@ import style from './RemoveHouses.module.scss';
 
 const RemoveHouses = () => {
   const dispatch = useDispatch();
-  const user = { id: 1 };
-  // const { user } = useSelector((state) => state.userReducer);
+  const { user } = useSelector((state) => state.userReducer);
 
   const houseStore = useSelector((state) => state.housesReducer.houses);
-  const [houses, setHouses] = useState(houseStore.filter((house) => house.user_id === user.id));
+  const [houses, setHouses] = useState(houseStore
+    .filter((house) => house.user_id === user.user_id));
 
   const deleteHouse = (userId, id) => {
     dispatch(removeHouse(userId, id));
