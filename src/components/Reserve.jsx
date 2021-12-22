@@ -28,7 +28,6 @@ const Reserve = () => {
     if (input.name === 'currentHouse') {
       const selectedHouse = store.houses.find((house) => house.id === parseInt(input.value, 10));
       stateM[input.name] = selectedHouse;
-      console.log(selectedHouse);
     } else {
       stateM[input.name] = input.value;
     }
@@ -54,7 +53,7 @@ const Reserve = () => {
 
     };
     reservationApi(dispatch, addReservation, newReservation);
-    history('/');
+    history('/myreservations');
   };
 
   return (

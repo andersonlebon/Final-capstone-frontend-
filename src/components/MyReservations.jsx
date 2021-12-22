@@ -1,19 +1,15 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-trailing-spaces */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReservations, removeReservation } from '../store/reducers/myReservations';
 import reservationApi, { deleteReservation } from '../api/reservations';
 
 const Myreservations = () => {
-  // render the store in table
   const dispatch = useDispatch();
   const { reservationsReducer } = useSelector((state) => state);
   useEffect(() => {
     dispatch(reservationApi, getReservations);
   }, []);
   const handleDelete = (id) => {
-    console.log(id);
     deleteReservation(dispatch, removeReservation, id);
   };
 

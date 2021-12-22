@@ -2,17 +2,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const reservationsReducer = createSlice({
-  name: 'reservation',
+  name: 'RESERVATIONS',
   initialState: [],
 
   reducers: {
-    getReservations(state, action) {
+    RECIEVED(state, action) {
       return [...action.payload];
     },
-    addReservation(state, action) {
+    ADDED(state, action) {
       state.push(action.payload);
     },
-    removeReservation(state, action) {
+    REMOVED(state, action) {
       return state.filter(
         (reservation) => reservation.id !== parseInt(action.payload, 10),
       );
@@ -20,5 +20,9 @@ const reservationsReducer = createSlice({
   },
 });
 
-export const { addReservation, removeReservation, getReservations } = reservationsReducer.actions;
+export const {
+  ADDED: addReservation,
+  REMOVED: removeReservation,
+  RECIEVED: getReservations,
+} = reservationsReducer.actions;
 export default reservationsReducer.reducer;
