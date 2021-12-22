@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Final-Capstone-Front-End Project
 
-## Available Scripts
+> In this task, we used the live data from the [Final-Capstone-Back-End Project](https://github.com/andersonlebon/Final-Capstone-backend).
 
-In the project directory, you can run:
+The objective is to build a house booking application(with discount) where the user will have the posibilities to add, reserve and delete houses with added advantage to view house details.The application has authentication whereby the user logged in can only delete the houses that he added.
 
-### `yarn start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Main auth page
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![]()
 
-### `yarn test`
+#### Signup Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![]()
 
-### `yarn build`
+#### Home Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Details Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Remove Houses
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Reserve
 
-### `yarn eject`
+## Built With
+- React-Redux
+- HTML/SCSS
+- Final-capstone-Back-End API
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Live Demo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Find the application's live version [HERE]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Getting Started
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+- Chrome browser
+- Node v14.XX >
+- npm (usually already installed with current node version)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run code locally, please follow steps belove
 
-### Code Splitting
+1. `git@github.com:andersonlebon/Final-capstone-frontend-.git`
+2. run `npm install`
+3. then run `npm run start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Usage
 
-### Analyzing the Bundle Size
+`Run npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Run tests
 
-### Making a Progressive Web App
+To test for add and remove a task, you need to install Jest or run `npm install'
+`npm run test`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Linters Verification
 
-### Advanced Configuration
+`npx eslint .`
+`npx stylelint "**/*.{css,scss}"`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Authors
 
-### Deployment
+👤 **Sylvestre**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- GitHub: [@sylvestre](https://github.com/pasytchangwa)
+- Twitter: [@Sylvestre](https://twitter.com/Sylvest10415595)
+- LinkedIn: [Sylvestre Tchangwa](https://www.linkedin.com/in/pagkeusylvestre/)
 
-### `yarn build` fails to minify
+👤 **Tolib**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub: [@toliboff](https://github.com/toliboff)
+- Twitter: [@toliboff](https://twitter.com/tolib_tolibov)
+- LinkedIn: [Tolibjon Tolibov](https://linkedin.com/in/tolibjon-tolibov)
+
+👤 **Anderson Caleb**
+
+- GitHub: [@Andersonlebon](https://github.com/andersonlebon)
+- Twitter: [@BuyananaCaleb](https://twitter.com/BuyananaCaleb)
+- LinkedIn: [@Anderson Caleb](https://www.linkedin.com/in/anderson-caleb-915343209/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+- Original design idea by Murat Korkmaz on [Behance](https://www.behance.net/muratk).
+
+## License
+
+[MIT](./LICENSE)
