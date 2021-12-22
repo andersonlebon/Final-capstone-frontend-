@@ -40,7 +40,7 @@ const Navbar = ({ logo, toggle }) => {
         </h1>
         <div className={style.nav_body}>
           <NavMenu className={style.navlist}>
-            <NavLink className={style.items} to="/" activeStyle>
+            <NavLink className={style.items} to="/" activestyle>
               Houses
             </NavLink>
 
@@ -48,7 +48,7 @@ const Navbar = ({ logo, toggle }) => {
               Reservations
             </NavLink>
 
-            <NavLink className={style.items} to="/addhouse" activeStyle>
+            <NavLink className={style.items} to="/addhouse" activestyle>
               Add House
             </NavLink>
 
@@ -56,7 +56,7 @@ const Navbar = ({ logo, toggle }) => {
               Remove House
             </NavLink>
 
-            <NavLink className={style.items} to="/reserve" activeStyle>
+            <NavLink className={style.items} to="/reserve" activestyle>
               Reserve
             </NavLink>
 
@@ -64,7 +64,7 @@ const Navbar = ({ logo, toggle }) => {
               className={style.items}
               to="/login"
               onClick={handleLogout}
-              activeStyle
+              activestyle
             >
               Logout
             </NavLink>
