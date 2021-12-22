@@ -2,7 +2,7 @@
 
 # Final-Capstone-Front-End Project
 
-> In this task, we used the live data from the [Final-Capstone-Back-End Project](https://github.com/andersonlebon/Final-Capstone-backend).
+> In this task, we used the live API data from the [Final-Capstone-Back-End Project](https://github.com/andersonlebon/Final-Capstone-backend).
 
 The objective was to build a house booking application(with discount) where the user has the posibilities to add, reserve and delete houses with added advantage to view house details.The application has authentication whereby the logged in user can only delete the houses that he/she added.
 
