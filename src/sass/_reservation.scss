@@ -30,6 +30,17 @@ $secondary-color: #fff;
   }
 }
 
+.name-input {
+  grid-column: 1/3;
+  display: flex;
+
+  input {
+    width: 50% !important;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
 .reservation {
   // center the reservation the content with flexbox
   position: relative;
@@ -255,16 +266,5 @@ $secondary-color: #fff;
     font-weight: bold;
     text-align: center;
     padding-top: 30px;
-  }
-}
-
-.name-input {
-  grid-column: 1/3;
-  display: flex;
-
-  input {
-    width: 50% !important;
-    margin: 0 auto;
-    text-align: center;
   }
 }
