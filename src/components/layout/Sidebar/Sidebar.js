@@ -28,7 +28,7 @@ const Sidebar = ({ isOpen, toggle }) => {
           <NavLink to="/myreservations">My Reservations</NavLink>
           <NavLink to="/addhouse">Add House</NavLink>
           <NavLink to="/removehouse">Remove House</NavLink>
-          <NavLink to="/reserve">Reserve</NavLink>
+          <NavLink to="/reserve/new">Reserve</NavLink>
           <NavLink to="/login" onClick={handleLogout}>Logout</NavLink>
         </SidebarMenu>
         <SideBtnWrap>

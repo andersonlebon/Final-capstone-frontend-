@@ -6,18 +6,20 @@ import {
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './App.css';
+import './sass/main.scss';
 import Houses from './components/displayHouses/Houses';
-import MyReservations from './components/MyReservations';
+import MyReservations from './components/reservations/MyReservations';
 import AddHouses from './components/AddHouses/AddHouses';
 import RemoveHouses from './components/RemoveHouses/RemoveHouses';
-import Reserve from './components/Reserve';
+import Reserve from './components/reservations/Reserve';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import ShowHouse from './components/showHouse/showHouse';
 import Navigation from './NavPages';
 
 function App() {
-  const { user } = useSelector((state) => state.userReducer);
+  const { userReducer, housesReducer: store } = useSelector((state) => state);
+  const { user } = userReducer;
 
   return (
     <Router>
@@ -35,11 +37,18 @@ function App() {
               <Route path="/myreservations" element={<MyReservations />} />
               <Route path="/addhouse" element={<AddHouses />} />
               <Route path="/removehouse" element={<RemoveHouses />} />
-              <Route path="/reserve" element={<Reserve />} />
+              <Route
+                path="/reserve/:houseId"
+                element={<Reserve store={store} />}
+              />
             </Routes>
           </article>
         </section>
-      ) : <Login /> }
+      ) : (
+        <Routes>
+          <Route path="/" element={<Login />} />
+        </Routes>
+      )}
     </Router>
   );
 }
