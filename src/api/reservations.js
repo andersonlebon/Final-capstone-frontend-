@@ -6,7 +6,6 @@ const resevationsApi = async (dispatch, action, id, newData = null) => {
   try {
     if (newData != null) {
       const { data } = await baseApi.post(`${resevationsBasedURL}/${id}}/reservations`, newData);
-      console.log(data);
       dispatch(action(data));
     }
 
