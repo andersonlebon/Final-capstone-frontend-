@@ -4486,10 +4486,10 @@
   "resolved" "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.3.0.tgz"
   "version" "4.3.0"
 
-"eslint-plugin-react@^7.21.5", "eslint-plugin-react@^7.27.1":
-  "integrity" "sha512-meyunDjMMYeWr/4EBLTV1op3iSG3mjT/pz5gti38UzfM4OPpNc2m0t2xvKCOMU5D6FSdd34BIMFOvQbW+i8GAA=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.27.1.tgz"
-  "version" "7.27.1"
+"eslint-plugin-react@^7.21.5", "eslint-plugin-react@^7.27.1", "eslint-plugin-react@^7.28.0":
+  "integrity" "sha512-IOlFIRHzWfEQQKcAD4iyYDndHwTQiCMcJVJjxempf203jnNLUnW34AXLrV33+nEXoifJE2ZEGmcjKPL8957eSw=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.28.0.tgz"
+  "version" "7.28.0"
   dependencies:
     "array-includes" "^3.1.4"
     "array.prototype.flatmap" "^1.2.5"
