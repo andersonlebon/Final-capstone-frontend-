@@ -21,9 +21,10 @@ The objective was to build a house booking application(with discount) where the 
 ![removehouse](removehouse.png)
 
 #### Reservation Page
+![Reservation](Reservation.png)
 
 #### Mobile version
-
+![mobileV](mobileV.png)
 ![mobile](mobile.png)
 
 ## Built With
