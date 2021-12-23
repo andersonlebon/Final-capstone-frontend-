@@ -44,7 +44,7 @@
 
 .container .add_form input,
 .container .add_form textarea {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   background-color: #a2c908;

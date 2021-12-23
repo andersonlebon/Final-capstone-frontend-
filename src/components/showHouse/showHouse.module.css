@@ -24,6 +24,9 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 .show_container .show_img img {
@@ -31,7 +34,11 @@
   -o-object-fit: cover;
      object-fit: cover;
   height: 250px;
-  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  -webkit-box-shadow: 5px 5px 5px #999;
+          box-shadow: 5px 5px 5px #999;
 }
 
 .show_container .show_img .btn_home {
@@ -290,13 +297,20 @@
     margin-top: 14rem;
     padding-bottom: 4rem;
     height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
   }
   .show_container .show_img img {
     width: 250px;
     -o-object-fit: cover;
        object-fit: cover;
     height: 250px;
-    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    -webkit-box-shadow: 5px 5px 5px #999;
+            box-shadow: 5px 5px 5px #999;
   }
   .show_container .show_img .btn_home {
     -ms-flex-item-align: start;

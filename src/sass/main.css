@@ -5,18 +5,10 @@
 
 .reservation-info ul {
   margin: 10px 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
 }
 
 .reservation-info ul span {
   font-weight: bold;
-}
-
-.reservation-info ul li:nth-child(even) {
-  text-align: right;
 }
 
 .reservation-info button {

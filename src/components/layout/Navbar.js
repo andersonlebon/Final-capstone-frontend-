@@ -3,16 +3,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import SocialIcons from './socialIcons';
 import {
-  Bars, NavLink, NavMenu, MobileIcon,
+  Bars, NavLink, NavMenu, MobileIcon, UserIcon, UserCircle,
 } from './NavbarElelments';
 import logo from './logo.png';
 import style from './navbar.module.scss';
 import { logoutUser } from '../../store/reducers/users';
 
 const Navbar = ({ logo, toggle }) => {
+  const { user } = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -29,13 +30,17 @@ const Navbar = ({ logo, toggle }) => {
           <Link to="/" className={style.logo_div}>
             <img src={logo} alt="logo" width={100} height={100} />
           </Link>
+          <UserIcon>
+            <UserCircle />
+            <span className={style.cur_user}>{user.name}</span>
+          </UserIcon>
           <MobileIcon onClick={toggle}>
             <Bars />
           </MobileIcon>
         </h1>
         <div className={style.nav_body}>
           <NavMenu className={style.navlist}>
-            <NavLink className={style.items} to="/" activeStyle>
+            <NavLink className={style.items} to="/" activestyle>
               Houses
             </NavLink>
 
@@ -43,7 +48,7 @@ const Navbar = ({ logo, toggle }) => {
               Reservations
             </NavLink>
 
-            <NavLink className={style.items} to="/addhouse" activeStyle>
+            <NavLink className={style.items} to="/addhouse" activestyle>
               Add House
             </NavLink>
 
@@ -55,7 +60,12 @@ const Navbar = ({ logo, toggle }) => {
               Reserve
             </NavLink>
 
-            <NavLink className={style.items} to="/login" onClick={handleLogout} activeStyle>
+            <NavLink
+              className={style.items}
+              to="/login"
+              onClick={handleLogout}
+              activestyle
+            >
               Logout
             </NavLink>
           </NavMenu>
@@ -68,8 +78,7 @@ const Navbar = ({ logo, toggle }) => {
           {' '}
           <span>{new Date().getFullYear()}</span>
           {' '}
-          all
-          rights reserved
+          all rights reserved
         </p>
       </footer>
     </nav>

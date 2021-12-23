@@ -30,6 +30,7 @@
   .description_div {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     h2 {
       color: grey;
@@ -52,6 +53,10 @@
     object-fit: cover;
     height: 200px;
     border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-shadow: 5px 5px 5px #999;
   }
 }
 
@@ -96,6 +101,10 @@
       object-fit: cover;
       height: 200px;
       border-radius: 50%;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      box-shadow: 5px 5px 5px #999;
     }
   }
 
