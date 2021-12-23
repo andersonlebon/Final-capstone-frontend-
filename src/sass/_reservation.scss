@@ -140,7 +140,6 @@ $secondary-color: #fff;
 
 .image-bg {
   position: absolute;
-  // background-color: #96bf0f11;
   top: 0;
   width: 100%;
   height: 100%;
@@ -164,9 +163,6 @@ $secondary-color: #fff;
 
 .react-datepicker {
   background-color: #b0b895 !important;
-  // .react-datepicker__current-month, .react-datepicker__day-name {
-  //      color: $secondary-color !important;
-  // }
 
   .react-datepicker__navigation,
   .react-datepicker__navigation--next {
