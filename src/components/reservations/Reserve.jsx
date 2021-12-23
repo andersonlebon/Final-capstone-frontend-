@@ -6,9 +6,9 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchHouses } from '../store/action/houseActions';
-import { addReservation } from '../store/reducers/myReservations/index';
-import reservationApi from '../api/reservations';
+import { fetchHouses } from '../../store/action/houseActions';
+import { addReservation } from '../../store/reducers/myReservations/index';
+import reservationApi from '../../api/reservations';
 
 const defaultImage = 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=875&q=80';
 
@@ -35,6 +35,7 @@ const Reserve = (props) => {
         (house) => house.id === parseInt(houseId, 10),
       );
       stateM.currentHouse = selectedHouse || {};
+      stateM.price = selectedHouse.price;
       setState({ ...stateM });
     }
   }, []);
@@ -69,13 +70,10 @@ const Reserve = (props) => {
     };
     const { user_id: id } = userReducer.user;
     reservationApi(dispatch, addReservation, id, newReservation);
-    console.log(newReservation);
     history('/myreservations');
   };
   const check = (id) => {
     const { currentHouse } = state;
-    console.log(currentHouse.id, id);
-    console.log(currentHouse.id === id);
     return currentHouse.id === id;
   };
 
@@ -110,9 +108,10 @@ const Reserve = (props) => {
           </div>
           <div className="form-group">
             <input
-              type="text"
               onChange={(e) => handleChange(e)}
               name="duration"
+              type="number"
+              min="1"
               placeholder="Duration"
             />
           </div>
@@ -121,6 +120,8 @@ const Reserve = (props) => {
               type="number"
               onChange={(e) => handleChange(e)}
               name="price"
+              min="1"
+              value={state.price}
               placeholder="Price"
             />
           </div>

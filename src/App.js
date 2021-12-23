@@ -1,32 +1,26 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './App.css';
 import './sass/main.scss';
 // import Navbar from './components/layout/Navbar';
 import Houses from './components/displayHouses/Houses';
-import MyReservations from './components/MyReservations';
+import MyReservations from './components/reservations/MyReservations';
 import AddHouses from './components/AddHouses/AddHouses';
 import RemoveHouses from './components/RemoveHouses/RemoveHouses';
-import Reserve from './components/Reserve';
+import Reserve from './components/reservations/Reserve';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import ShowHouse from './components/showHouse/showHouse';
-import resevationsApi from './api/reservations';
-import { getReservations } from './store/reducers/myReservations/index';
 import Navigation from './NavPages';
 
 function App() {
   const { userReducer, housesReducer: store } = useSelector((state) => state);
-  const dispatch = useDispatch();
   const { user } = userReducer;
-  useEffect(() => {
-    resevationsApi(dispatch, getReservations, user.user_id);
-  }, []);
 
   return (
     <Router>

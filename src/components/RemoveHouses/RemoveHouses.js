@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeHouse } from '../../store/action/houseActions';
+import { removeHouse, fetchHouses } from '../../store/action/houseActions';
 import style from './RemoveHouses.module.scss';
 
 const RemoveHouses = () => {
@@ -10,6 +10,12 @@ const RemoveHouses = () => {
   const houseStore = useSelector((state) => state.housesReducer.houses);
   const [houses, setHouses] = useState(houseStore
     .filter((house) => house.user_id === user.user_id));
+
+  useEffect(() => {
+    dispatch(fetchHouses());
+    const userHouses = houseStore.filter((house) => house.user_id === user.user_id);
+    setHouses(userHouses);
+  }, []);
 
   const deleteHouse = (userId, id) => {
     dispatch(removeHouse(userId, id));

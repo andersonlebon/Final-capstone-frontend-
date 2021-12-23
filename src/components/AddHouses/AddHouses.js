@@ -38,7 +38,7 @@ const AddHouses = () => {
         <input type="text" name="location" onChange={handleNewHouse} placeholder="City" required />
         <input type="number" name="availability" onChange={handleNewHouse} placeholder="Availability" min="1" required />
         <input type="number" name="price" onChange={handleNewHouse} placeholder="Price" required />
-        <input type="number" min="0" step="0.1" name="discount" onChange={handleNewHouse} placeholder="Discount" required />
+        <input type="number" min="0" max="100" step="0.1" name="discount" onChange={handleNewHouse} placeholder="Discount" required />
         <input
           name="image"
           type="file"
