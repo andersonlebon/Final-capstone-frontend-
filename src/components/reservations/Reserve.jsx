@@ -95,7 +95,7 @@ const Reserve = (props) => {
         <p className="description">{state.currentHouse.house_description}</p>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="form-group  name-input">
-            <input type="text" value={userReducer.user.name} /> 
+            <input type="text" value={userReducer.user.name} />
           </div>
           <div className="form-group">
             <select name="currentHouse" onChange={(e) => handleChange(e)}>
