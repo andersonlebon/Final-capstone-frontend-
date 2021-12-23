@@ -47,6 +47,7 @@ const Reserve = (props) => {
         (house) => house.id === parseInt(input.value, 10),
       );
       stateM[input.name] = selectedHouse;
+      stateM.price = selectedHouse.price;
     } else {
       stateM[input.name] = input.value;
     }
@@ -94,7 +95,7 @@ const Reserve = (props) => {
         <p className="description">{state.currentHouse.house_description}</p>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="form-group  name-input">
-            <input type="text" value={userReducer.user.name} />
+            <input type="text" value={userReducer.user.name} /> 
           </div>
           <div className="form-group">
             <select name="currentHouse" onChange={(e) => handleChange(e)}>
@@ -124,7 +125,7 @@ const Reserve = (props) => {
               onChange={(e) => handleChange(e)}
               name="price"
               min="1"
-              value={state.price}
+              value={state.currentHouse.price}
               placeholder="Price"
             />
           </div>

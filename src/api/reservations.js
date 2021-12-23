@@ -23,7 +23,6 @@ export const deleteReservation = async (dispatch, action, id, reserId) => {
     await baseApi.delete(`${resevationsBasedURL}/${id}}/reservations/${reserId}`);
     dispatch(action(reserId));
   } catch (e) {
-    console.log(e);
     dispatch({ type: `${action.type}Fail`, payload: { error: e.message } });
   }
 };

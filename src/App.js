@@ -7,7 +7,6 @@ import {
 import { useSelector } from 'react-redux';
 import './App.css';
 import './sass/main.scss';
-// import Navbar from './components/layout/Navbar';
 import Houses from './components/displayHouses/Houses';
 import MyReservations from './components/reservations/MyReservations';
 import AddHouses from './components/AddHouses/AddHouses';
@@ -38,11 +37,18 @@ function App() {
               <Route path="/myreservations" element={<MyReservations />} />
               <Route path="/addhouse" element={<AddHouses />} />
               <Route path="/removehouse" element={<RemoveHouses />} />
-              <Route path="/reserve/:houseId" element={<Reserve store={store} />} />
+              <Route
+                path="/reserve/:houseId"
+                element={<Reserve store={store} />}
+              />
             </Routes>
           </article>
         </section>
-      ) : <Login /> }
+      ) : (
+        <Routes>
+          <Route path="/" element={<Login />} />
+        </Routes>
+      )}
     </Router>
   );
 }

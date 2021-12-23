@@ -12,9 +12,6 @@
 }
 
 .container {
-  /* display: grid;
-  grid-template-columns: 15% 85%;
-  height: 100vh; */
   display: grid;
   grid-template-rows: 15% 85%;
   height: 100vh;
