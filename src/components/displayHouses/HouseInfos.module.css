@@ -1,0 +1,176 @@
+.info_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: 0% 10px;
+  gap: 1.8rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info_container .title_div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info_container .title_div .info_title {
+  color: black;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+
+.info_container .divider {
+  width: 30%;
+  border-bottom: 5px dotted grey;
+  font-weight: bold;
+}
+
+.info_container .description_div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info_container .description_div h2 {
+  color: grey;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.info_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 200px;
+  border-radius: 100%;
+}
+
+.info_img img {
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 200px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  -webkit-box-shadow: 5px 5px 5px #999;
+          box-shadow: 5px 5px 5px #999;
+}
+
+@media (min-width: 768px) {
+  .info_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    padding: 0% 10px;
+    gap: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .title_div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .title_div .info_title {
+    color: black;
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+  .divider {
+    max-width: 20%;
+    border-bottom: 4px dotted grey;
+    font-weight: bold;
+  }
+  .info_img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 200px;
+    border-radius: 100%;
+  }
+  .info_img img {
+    width: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 200px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    -webkit-box-shadow: 5px 5px 5px #999;
+            box-shadow: 5px 5px 5px #999;
+  }
+  .description_div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .description_div h2 {
+    color: grey;
+    font-size: 1.5rem;
+  }
+}
+/*# sourceMappingURL=HouseInfos.module.css.map */

@@ -1,0 +1,112 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-image: url("https://media.istockphoto.com/photos/modern-house-and-backyard-picture-id109350295?b=1&k=20&m=109350295&s=170667a&w=0&h=sPhaB428eZLl-VzGhoL7oGPtL-SxGBFWlTCQkXHenJ4=");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #aed60b;
+  background-blend-mode: multiply;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .add_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 8px #fff;
+          box-shadow: 0 0 8px #fff;
+  padding: 1rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 500px;
+          flex: 0 1 500px;
+  margin: 1rem auto;
+}
+
+.container .add_form .form_head {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 1.5rem 0;
+}
+
+.container .add_form input,
+.container .add_form textarea {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #a2c908;
+  color: #fff;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  outline: none;
+}
+
+.container .add_form textarea {
+  height: 5rem;
+  border-radius: 5px;
+}
+
+.container .add_form ::-webkit-input-placeholder {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.container .add_form :-ms-input-placeholder {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.container .add_form ::-ms-input-placeholder {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.container .add_form ::placeholder {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.container .add_form input[type=file]::file-selector-button {
+  border: 1px solid #96b70e;
+  padding: 0.2em 0.4em;
+  border-radius: 15px;
+  background-color: #fdfdfc;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.container .add_form input[type=file]::file-selector-button:hover {
+  background-color: #b4df09;
+}
+
+.container .add_form .btn_primary {
+  padding: 0.5rem 2.5rem;
+  border-radius: 3px;
+  background-color: #96b70e;
+  color: #fafafa;
+  cursor: pointer;
+  margin: 1rem 0.5rem;
+  margin-top: auto;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border: 1px solid #fff;
+}
+
+.container .add_form .btn_primary:hover {
+  opacity: 0.8;
+}
+/*# sourceMappingURL=AddHouses.module.css.map */
